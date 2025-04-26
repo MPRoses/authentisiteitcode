@@ -1,0 +1,146 @@
+$cubic: 1.2s cubic-bezier(.18,.7,.34,.89)
+$cubicfast: .63s cubic-bezier(.18,.7,.34,.89)
+
+
+.nav
+  width: 100vw
+  height: 120px
+  position: fixed
+  z-index: 100 // I like 100 as max, and built towards for reg el's
+  background-color: white
+  top: 0
+  left: 0
+  transition: height $cubic
+  .nav-logo
+    position: absolute
+    top: 10%
+    left: 90px
+    height: 80%
+    img
+      height: 100%
+  .nav-wrapper
+    position: absolute
+    height: 80%
+    top: 10%
+    right: 90px
+    width: 600px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .nav-item
+      width: 25%
+      height: 60%
+      top: 20%
+      position: relative
+      color: #002D3C
+      font-family: 'Inter', sans-serif
+      font-weight: 700
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 25px
+      font-size: 1.1rem
+      span
+        img
+          position: relative
+          width: 8px
+          right: -3px
+          transition: transform $cubicfast
+        &:hover
+          img
+            transform: rotate(180deg)
+      .nav-dropdown
+        width: 100%
+        height: 0
+        position: absolute
+        overflow: hidden
+        top: 55px
+        border-radius: 25px
+        font-size: .7rem
+        left: 0
+        background-color: white
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        align-items: center
+        transition: height $cubicfast, font-size $cubicfast
+      &:nth-child(3)
+        background-color: #3198A5
+        color: white
+      &:nth-child(2):hover
+        opacity: 1 !important
+        .nav-dropdown
+          height: 50px
+
+.nav-semi
+  height: 95px
+  .nav-wrapper .nav-item
+    width: 25%
+    .nav-dropdown .dropdown-item
+      transform: scale(.95)
+
+
+.clickable
+  transition: opacity $cubic, transform $cubic
+  &:hover
+    cursor: pointer
+    opacity: .75
+    transform: scale(.96)
+
+
+
+// Mobile (small screens)
+@media (max-width: 600px)
+  // here later add custom menu that goes full screen,
+  // replace contact CTA with "Menu" CTA
+  .nav
+    height: 90px
+    .nav-logo
+      left: 30px
+      height: 70%
+      img
+        height: 100%
+    .nav-wrapper
+      top: 15%
+      right: 30px
+      width: 70%
+      .nav-item
+        font-size: 0.8rem
+        width: auto
+        padding: 0 10px
+        .nav-dropdown
+          font-size: 0.6rem
+
+  .nav-semi
+    height: 70px
+    .nav-wrapper
+      .nav-item
+        .nav-dropdown
+          .dropdown-item
+            font-size: 0.5rem
+
+// Tablet (medium screens)
+@media (min-width: 601px) and (max-width: 1024px)
+  .nav
+    height: 100px
+    .nav-logo
+      left: 50px
+      height: 75%
+    .nav-wrapper
+      top: 12%
+      right: 50px
+      width: 500px
+      .nav-item
+        font-size: 0.9rem
+        width: auto
+        padding: 0 15px
+        .nav-dropdown
+          font-size: 0.65rem
+
+  .nav-semi
+    height: 80px
+    .nav-wrapper
+      .nav-item
+        .nav-dropdown
+          .dropdown-item
+            font-size: 0.55rem
