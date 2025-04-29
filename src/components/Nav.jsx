@@ -42,7 +42,7 @@ function Nav() {
                 </div>
                 <div className="nav-item">
                     <span className="clickable">
-                        Hoe ik help?
+                        Hoe ik help
                         <img src={dropdown} alt="downwards arrow" />
                     </span>
                     <div className="nav-dropdown">

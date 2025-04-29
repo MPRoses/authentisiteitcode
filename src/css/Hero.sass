@@ -1,15 +1,121 @@
-.hero
-  width: 100vw
+$dark: #002D3C
+$accent: #3198A5
+$tablet: 1024px
+$phone: 600px
+.section
+  width: 100%
   height: 100vh
   position: absolute
   top: 0
   left: 0
-  background-color: gray
-  .hero-wrapper
-  .hero-img
-    width: 400px
-    height: 600px
-    background-color: red
+  .section-img
+    width: 28vw
+    height: 85vh
+    background-color: $accent
     position: absolute
-    right: 500px
-    top: 200px
+    z-index: 3
+    right: 10vw
+    top: 12.5vh
+    border-radius: 2vw
+    transform: scale(0.9)
+    transition: transform 1.3s cubic-bezier(.18,.7,.34,.89), opacity 2s cubic-bezier(.18,.7,.34,.89)
+    img
+      width: calc(100% - 0.3vw)
+      height: calc(100% - 0.3vw)
+      top: -1.5vh
+      background-color: #F4F4F4
+      position: absolute
+      left: -1vw
+      border-radius: 2vw
+      will-change: width
+      transition: width 1.3s cubic-bezier(.18,.7,.34,.89), height 1.3s cubic-bezier(.18,.7,.34,.89)
+  .section-wrapper
+    left: 10vw
+    top: 30vh
+    width: 39vw
+    height: 40vh
+    position: absolute
+    color: $dark
+    font-family: "Inter", sans-serif
+    .section-title
+      font-weight: 700
+      font-size: 3vw
+      text-align: left
+    .section-bio
+      font-weight: 400
+      text-align: left
+      left: 1vw
+      padding-top: 2vh
+      position: relative
+      font-size: 1.1vw
+    .hero-cta-container
+      position: relative
+      top: 4vh
+      left: 1vw
+      display: flex
+      flex-direction: row
+      .hero-cta
+        width: 12vw
+        height: 7vh
+        position: relative
+        border-radius: 2vw
+        border: 0.1vw solid $dark
+        font-size: 1.2vw
+        align-items: center
+        justify-content: center
+        display: flex
+        margin-right: 3vw
+@media screen and (max-width: $tablet)
+  .section
+    .section-wrapper
+      left: 5vw
+      top: 25vh
+      width: 45vw
+      height: auto
+      .section-title
+        font-size: 4.5vw
+        text-align: left
+      .section-bio
+        font-size: 2.5vw
+        left: 0
+        padding-top: 2vh
+      .hero-cta-container
+        top: 3vh
+        flex-direction: row
+        .hero-cta
+          width: 18vw
+          height: 6vh
+          font-size: 1.8vw
+    .section-img
+      width: 40vw
+      height: 60vh
+      position: absolute
+      right: 5vw
+      top: 25vh
+      transform: scale(1)
+@media screen and (max-width: #{$phone})
+  .section
+    .section-wrapper
+      position: relative
+      width: 85%
+      left: 7.5%
+      top: 15%
+      .section-title
+        width: 100%
+        text-align: left !important
+        font-size: 6.3vw
+        margin-bottom: 0
+        left: 0
+      .section-bio
+        width: 100%
+        text-align: left
+        font-size: 4vw
+        margin-bottom: 3vh
+        left: 0
+      .hero-cta-container
+        display: none
+    .section-img
+      position: relative
+      top: 17.5%
+      width: 85%
+      left: 7.5%

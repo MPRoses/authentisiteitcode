@@ -1,14 +1,17 @@
 import './App.css';
 import './fonts.css';
 
-import Nav from './components/Nav';
 import Hero from './components/Hero';
+import AboutMe from './components/AboutMe';
+import Nav from './components/Nav';
 
 function App() {
+
   return (
-    <div className="App">
-      <Nav />
-      <Hero />
+    <div className="content-container">
+        <Hero />
+        <AboutMe />
+        <Nav />
     </div>
   );
 }

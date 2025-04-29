@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 code {
@@ -15,4 +17,9 @@ code {
 * {
   margin: 0;
   padding: 0;
+}
+
+#root, body {
+  width: 100vw;
+  height: 300vh;
 }
