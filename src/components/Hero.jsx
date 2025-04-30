@@ -2,6 +2,32 @@ import React from 'react';
 import './../css/Hero.css';
 
 function Hero() {
+    useEffect(() => {
+        // Scroll helper
+        function scrollToSection(selector, offsetMultiplier = 0.15) {
+            const target = $(selector);
+            if (target.length) {
+                const offset = target.offset().top - ($(window).height() * offsetMultiplier);
+                $('html, body').animate({ scrollTop: offset }, 600);
+            }
+        }
+
+        // CTA: Meer over mij
+        $('.hero-cta:contains("Meer over mij")').on('click', function () {
+            scrollToSection('.about-me', 0.15);
+        });
+
+        // CTA: Hoe ik help
+        $('.hero-cta:contains("Hoe ik help")').on('click', function () {
+            scrollToSection('.helpgebieden', 0.11);
+        });
+
+        return () => {
+            $('.hero-cta:contains("Meer over mij")').off('click');
+            $('.hero-cta:contains("Hoe ik help")').off('click');
+        };
+    }, []);
+
     return (
         <div className="section">
             <div className="section-wrapper">
@@ -24,7 +50,7 @@ function Hero() {
                 </div>
             </div>
             <div className="section-img">
-                <img src="" alt="main cover"/>
+                <img src="" alt="main cover" />
             </div>
         </div>
     );
