@@ -1,0 +1,73 @@
+.helpgebieden
+  width: 100vw
+  height: 100vh
+  position: absolute
+  top: 250vh
+  left: 0
+  .section-wrapper
+    top: -10vh
+    left: 50vw
+    transform: translateX(-50%)
+    width: 45vw
+    justify-content: center
+    align-items: center
+    display: flex
+    flex-direction: column
+    .section-title
+      text-align: center
+    .section-bio
+      font-size: .95vw
+      width: 40vw
+      text-align: center
+      p
+        margin-bottom: 2vh
+  .items-wrapper
+    width: 75vw
+    height: 64vh
+    position: absolute
+    top: 23vh
+    left: 12.5vw
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    .item
+      width: calc(25% + 0.3vw)
+      height: calc(100% + 0.3vw)
+      background-color: #3198A5
+      border-radius: 2vw
+      &:nth-child(1)
+        height: calc(89% + 0.3vw)
+        position: relative
+        top: calc(-6.5% + 0.3vw)
+      &:nth-child(3)
+        height: calc(95% + 0.3vw)
+        position: relative
+        top: calc(-3.5% + 0.3vw)
+      .item-content
+        width: calc(100% - 0.3vw)
+        background-color: #F4F4F4
+        height: calc(100% - 0.3vw)
+        border-radius: 2vw
+        position: relative
+        top: -1vh
+        left: -1vh
+        font-family: "Inter", sans-serif
+        font-weight: 700
+        color: #002D3C
+        .title
+          position: absolute
+          font-size: .8vw
+          text-align: left
+          top: 2vh
+          left: 2vw
+          width: 70%
+        .bio
+          font-weight: 400
+          position: absolute
+          top: 6.5vh
+          width: 85%
+          left: 2vw
+          font-size: .68vw
+          text-align: left
+

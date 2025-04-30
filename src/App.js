@@ -4,6 +4,8 @@ import './fonts.css';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Nav from './components/Nav';
+import Helpgebieden from "./components/Helpgebieden";
+import Ondersteuningsvormen from "./components/Ondersteuningsvormen";
 
 function App() {
 
@@ -12,6 +14,8 @@ function App() {
         <Hero />
         <AboutMe />
         <Nav />
+        <Helpgebieden />
+        <Ondersteuningsvormen />
     </div>
   );
 }
