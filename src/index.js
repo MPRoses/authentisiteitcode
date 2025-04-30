@@ -6,14 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import butter from './butter.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-/*
+
 butter.cleanup();
 
-if (window.innerWidth >= 1024) {
     butter.init({
         wrapperDamper: 1
-    });
-}*/
+
+})
 
 root.render(
     <React.StrictMode>

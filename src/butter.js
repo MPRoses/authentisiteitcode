@@ -102,6 +102,11 @@
             }
         
             //Check if the ".navbar" element is available in the DOM
+            var nav = document.querySelector(".nav");
+
+            if (nav) {
+                nav.style.transform = `${movementFixedElements}`;
+            }
             /*
             var navbarElement = document.querySelector(".navbar");
             if (navbarElement) {

@@ -1,43 +1,68 @@
 .about-me
-  width: 100vw
+  width: 100%
   height: 1300px
   position: absolute
-  top: 100vh
+  top: 950px
   left: 0
   .section-wrapper
     top: 0
     .section-title
-      font-size: 2vw
+      font-size: 2.5rem
     .section-bio
-      font-size: .95vw
-      width: 35vw
+      font-size: 1.2rem
+      width: 40vw
+      max-width: 762px
       p
-        margin-bottom: 2vh
+        margin-bottom: 20px
+  .section-img
+    position: absolute
+    left: unset
   .img-class-1
-    width: 11.43vw
-    height: 32.73vh
+    width: 200px
+    height: 300px
   .img-class-2
-    width: 17.14vw
-    height: 43.64vh
+    width: 300px
+    height: 550px
   .img-class-3
-    width: 20vw
-    height: 60vh
+    width: 450px
+    height: 700px
   .img-top-right
-    top: 3.82vh
-    right: 2.86vw
+    top: 0
+    right: 50px
   .img-middle-right
-    top: 62.18vh
-    right: 2.86vw
+    top: calc(10px + 650px)
+    right: 57px
   .img-bottom-right
-    top: 105.52vh
-    right: 8.29vw
+    top: calc(18px + 650px + 520px)
+    right: 151px
   .img-top-left
-    top: 5.45vh
-    right: 23.43vw
+    top: 18px
+    right: 490px
   .img-middle-left
-    top: 37.41vh
-    right: 23.14vw
+    top: calc(7px + 290px)
+    right: 485px
   .img-bottom-left
-    top: 79.36vh
-    right: 20.40vw
-
+    top: 805px
+    right: 343px
+  @media screen and (max-width: 1700px)
+    .img-top-right
+      top: 0
+      right: 50px
+    .img-middle-right
+      top: calc(10px + 650px)
+      right: 57px
+    .img-bottom-right
+      top: calc(18px + 650px + 520px)
+      right: 62px
+    .img-top-left
+      top: 675px
+      right: 358px
+      display: none
+    .img-middle-left
+      top: calc(7px + 290px)
+      right: 485px
+      display: none
+    .img-bottom-left
+      top: 805px
+      right: 343px
+      display: none

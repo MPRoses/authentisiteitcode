@@ -1,0 +1,109 @@
+$accent: #3198A5
+$light-bg: #F4F4F4
+$dark: #002D3C
+$cubic: 1.2s cubic-bezier(.18, .7, .34, .89)
+$cubicfast: .63s cubic-bezier(.18, .7, .34, .89)
+
+.FAQ
+  width: 100%
+  position: relative
+  top: 6400px
+  left: 0
+
+  .section-wrapper
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 1000px
+    align-items: center
+    display: flex
+    flex-direction: column
+
+    .section-title
+      text-align: center
+
+  .items-wrapper
+    width: 80%
+    left: 10%
+    display: flex
+    flex-wrap: wrap
+    top: 100px
+    position: relative
+    justify-content: center
+    gap: 25px
+
+    .faq-block
+      width: calc(50% - 12.5px)
+      display: flex
+      flex-direction: column
+
+    .item
+      width: 100%
+      height: 65px
+      background-color: $light-bg
+      border-radius: 20px
+      position: relative
+
+      &.clickable:hover
+        cursor: pointer
+
+      .title
+        font-family: "Inter", sans-serif
+        font-size: .78rem
+        color: $dark
+        position: relative
+        justify-content: center
+        align-items: center
+        left: 50px
+        top: 50%
+        transform: translateY(-50%)
+        font-weight: 600
+
+      .select, .var
+        transition: transform $cubicfast
+        background-color: $accent
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+
+      .select
+        width: 4px
+        height: 20px
+        right: 50px
+
+      .var
+        width: 20px !important
+        height: 4px !important
+        right: calc(50px - 8px)
+
+      &.active
+        .select
+          transform: translateY(-50%) rotate(45deg)
+        .var
+          transform: translateY(-50%) rotate(45deg)
+
+    .answer-wrapper
+      margin-top: 10px
+      background-color: #F4F4F4
+      padding: 0 25px
+      border-radius: 20px
+      font-size: 0.75rem
+      color: $dark
+      font-family: "Inter", sans-serif
+      overflow: hidden
+      max-height: 0
+      opacity: 0
+      transition: padding $cubicfast, max-height $cubicfast, opacity $cubicfast
+      font-weight: 500
+
+      &.open
+        padding: 15px 25px
+        max-height: 300px
+        opacity: 1
+  .contact
+    width: 100%
+    top: 500px
+    height: 500px
+    background-color: $dark
+    position: absolute
+    padding: 2em

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import $ from 'jquery';
+import React from 'react';
 import './../css/Hero.css';
 import './../css/AboutMe.css';
 
