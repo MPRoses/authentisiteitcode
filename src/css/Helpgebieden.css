@@ -1,0 +1,67 @@
+.helpgebieden {
+  width: 100%;
+  position: absolute;
+  top: 2500px;
+  left: 0;
+}
+.helpgebieden .section-wrapper {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.helpgebieden .section-wrapper .section-title {
+  text-align: center;
+}
+.helpgebieden .section-wrapper .section-bio {
+  font-size: 1.2rem;
+  width: 750px;
+  text-align: center;
+}
+.helpgebieden .section-wrapper .section-bio p {
+  margin-bottom: 20px;
+}
+.helpgebieden .items-wrapper {
+  width: 1300px;
+  position: relative;
+  margin: 325px auto 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.helpgebieden .items-wrapper .item {
+  width: 350px;
+  background-color: #3198A5;
+  border-radius: 40px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+}
+.helpgebieden .items-wrapper .item .item-content {
+  background-color: #F4F4F4;
+  border-radius: 40px;
+  transform: translate(-5px, -5px);
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #002D3C;
+  display: flex;
+  flex-direction: column;
+}
+.helpgebieden .items-wrapper .item .item-content .title {
+  font-size: 1.1rem;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.helpgebieden .items-wrapper .item .item-content .bio {
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/*# sourceMappingURL=Helpgebieden.css.map */

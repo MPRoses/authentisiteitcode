@@ -1,0 +1,107 @@
+.FAQ {
+  width: 100%;
+  position: relative;
+  top: 6400px;
+  left: 0;
+}
+.FAQ .section-wrapper {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.FAQ .section-wrapper .section-title {
+  text-align: center;
+}
+.FAQ .items-wrapper {
+  width: 80%;
+  left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  top: 100px;
+  position: relative;
+  justify-content: center;
+  gap: 25px;
+}
+.FAQ .items-wrapper .faq-block {
+  width: calc(50% - 12.5px);
+  display: flex;
+  flex-direction: column;
+}
+.FAQ .items-wrapper .item {
+  width: 100%;
+  height: 65px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  position: relative;
+}
+.FAQ .items-wrapper .item.clickable:hover {
+  cursor: pointer;
+}
+.FAQ .items-wrapper .item .title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  color: #002D3C;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+}
+.FAQ .items-wrapper .item .select, .FAQ .items-wrapper .item .var {
+  transition: transform 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  background-color: #3198A5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.FAQ .items-wrapper .item .select {
+  width: 4px;
+  height: 20px;
+  right: 50px;
+}
+.FAQ .items-wrapper .item .var {
+  width: 20px !important;
+  height: 4px !important;
+  right: 42px;
+}
+.FAQ .items-wrapper .item.active .select {
+  transform: translateY(-50%) rotate(45deg);
+}
+.FAQ .items-wrapper .item.active .var {
+  transform: translateY(-50%) rotate(45deg);
+}
+.FAQ .items-wrapper .answer-wrapper {
+  margin-top: 10px;
+  background-color: #F4F4F4;
+  padding: 0 25px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: padding 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), max-height 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  font-weight: 500;
+}
+.FAQ .items-wrapper .answer-wrapper.open {
+  padding: 15px 25px;
+  max-height: 300px;
+  opacity: 1;
+}
+.FAQ .contact {
+  width: 100%;
+  top: 500px;
+  height: 500px;
+  background-color: #002D3C;
+  position: absolute;
+  padding: 2em;
+}
+
+/*# sourceMappingURL=FAQ.css.map */

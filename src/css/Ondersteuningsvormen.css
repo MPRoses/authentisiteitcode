@@ -1,0 +1,85 @@
+.Ondersteuningsvormen {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 3675px;
+  left: 0;
+}
+.Ondersteuningsvormen .section-wrapper {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.Ondersteuningsvormen .section-wrapper .section-title {
+  text-align: center;
+}
+.Ondersteuningsvormen .section-wrapper .section-bio {
+  font-size: 1.2rem;
+  width: 750px;
+  text-align: center;
+}
+.Ondersteuningsvormen .section-wrapper .section-bio p {
+  margin-bottom: 20px;
+}
+.Ondersteuningsvormen .items-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  position: relative;
+  top: 340px;
+  left: 0;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  padding: 50px 0 50px 100px;
+  margin-bottom: 100px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item .section-img {
+  top: 50px;
+  left: 1100px;
+  position: absolute;
+  height: 500px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item .item-text {
+  width: 800px;
+  height: fit-content;
+  position: relative;
+  left: 100px;
+  font-family: "Inter", sans-serif;
+  color: #002D3C;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item .item-text span {
+  font-weight: 600;
+  font-size: 2.8rem;
+  padding-left: 0;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item .item-text div {
+  padding-left: 30px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item:nth-of-type(2) .item-text {
+  left: unset;
+  right: -900px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item:nth-of-type(2) .section-img {
+  height: 300px;
+  top: 65px;
+  left: 175px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item:nth-of-type(2) div {
+  width: 600px;
+}
+.Ondersteuningsvormen .items-wrapper .wrapper-item:nth-of-type(3) .section-img {
+  height: 300px;
+  top: 60px;
+}
+
+/*# sourceMappingURL=Ondersteuningsvormen.css.map */
