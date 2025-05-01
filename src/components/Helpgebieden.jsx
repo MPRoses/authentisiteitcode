@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
-import $ from 'jquery';
+import React from 'react';
 import './../css/Helpgebieden.css';
 import './../css/Hero.css';
+
+import autisme from './../img/autisme.png';
+import SI from './../img/SI.png';
+import achterstand from './../img/achterstand.png';
+
 
 function Helpgebieden() {
 
@@ -18,6 +22,7 @@ function Helpgebieden() {
             <div className="items-wrapper fade-in">
                 <div className="item">
                     <div className="item-content">
+                        <img src={autisme} alt="autisme"/>
                         <div className="title">
                             Wat is Autisme Spectrum Stoornis (ASS)?
                         </div>
@@ -32,6 +37,7 @@ function Helpgebieden() {
                 </div>
                 <div className="item">
                     <div className="item-content">
+                        <img src={SI} alt="waves"/>
                         <div className="title">
                             Begrijpen en begeleiden van sensorische uitdagingen
                         </div>
@@ -46,6 +52,7 @@ function Helpgebieden() {
                 </div>
                 <div className="item">
                     <div className="item-content">
+                        <img src={achterstand} alt="achterstand"/>
                         <div className="title">
                             Ondersteuning bij ontwikkelingsachterstanden
                         </div>

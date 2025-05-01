@@ -48,3 +48,15 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.credits {
+  position: absolute;
+  bottom: .1%;
+  font-size: 0.6rem;
+  font-family: "Inter", sans-serif;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 100;
+  white-space: nowrap;
+}

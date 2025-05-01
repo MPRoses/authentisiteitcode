@@ -2,6 +2,10 @@ import React from 'react';
 import './../css/Ondersteuningsvormen.css';
 import './../css/Hero.css';
 
+import img1 from './../img/img1.png';
+import img2 from './../img/img2.png';
+import img3 from './../img/img3.png';
+
 function Ondersteuningsvormen() {
 
     return (
@@ -37,7 +41,7 @@ function Ondersteuningsvormen() {
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src="" alt="main cover"/>
+                        <img src={img1} alt="main cover"/>
                     </div>
                 </div>
                 <div className="wrapper-item fade-in">
@@ -54,7 +58,7 @@ function Ondersteuningsvormen() {
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src="" alt="main cover"/>
+                        <img src={img2} alt="main cover"/>
                     </div>
                 </div>
                 <div className="wrapper-item fade-in">
@@ -73,7 +77,7 @@ function Ondersteuningsvormen() {
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src="" alt="main cover"/>
+                        <img src={img3} alt="main cover"/>
                     </div>
                 </div>
 

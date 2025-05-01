@@ -2,6 +2,16 @@ import React from 'react';
 import './../css/Hero.css';
 import './../css/AboutMe.css';
 
+import photo2 from './../img/photo2.jpg';
+import photo3 from './../img/photo3.jpg';
+import photo4 from './../img/photo4.jpg';
+import photo5 from './../img/photo5.jpg';
+import photo6 from './../img/photo6.jpg';
+import photo7 from './../img/photo7.jpg';
+import photo8 from './../img/photo8.jpg';
+import photo9 from './../img/photo9.jpg';
+import photo10 from './../img/photo10.jpg';
+
 function AboutMe() {
     return (
         <div className="about-me section">
@@ -84,22 +94,22 @@ function AboutMe() {
 
             {/* Restored original image layout */}
             <div className="section-img img-class-3 img-top-right about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo2} alt="main cover" />
             </div>
             <div className="section-img img-class-2 img-middle-right about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo3} alt="main cover" />
             </div>
             <div className="section-img img-class-1 img-bottom-right about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo9} alt="main cover" />
             </div>
             <div className="section-img img-class-3 img-bottom-left about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo4} alt="main cover" />
             </div>
             <div className="section-img img-class-2 img-middle-left about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo10} alt="main cover" />
             </div>
             <div className="section-img img-class-1 img-top-left about-me-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo8} alt="main cover" />
             </div>
         </div>
     );

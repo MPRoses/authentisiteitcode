@@ -90,8 +90,8 @@ function FAQ() {
 
     return (
         <div className="FAQ section">
-            <div className="section-wrapper">
-                <div className="section-title fade-in">FAQ</div>
+            <div className="section-wrapper fade-in">
+                <div className="section-title">FAQ</div>
             </div>
 
             <div className="items-wrapper">
@@ -114,11 +114,11 @@ function FAQ() {
             </div>
 
             <div className="contact">
-                <div className="title">Kom in contact</div>
-                <div className="items-container">
+                <div className="title fade-in">Kom in contact</div>
+                <div className="items-container fade-in">
                     <div className="item">
                         <img src={mail} alt="contact thingy" />
-                        <p>mailmail@outlook.com</p>
+                        <p>jdoeswijk@hotmail.com</p>
                     </div>
                     <div className="item">
                         <img src={phone} alt="contact thingy" />
@@ -130,9 +130,9 @@ function FAQ() {
                     </div>
                 </div>
 
-                <div className="title title-form">Contactformulier</div>
+                <div className="title title-form fade-in">Contactformulier</div>
 
-                <div className="contact-form">
+                <div className="contact-form fade-in">
                     <form className="form" onSubmit={handleFormSubmit} ref={formRef}>
                         <div className="form-row">
                             <input type="text" placeholder="Volledige naam" name="name" required />

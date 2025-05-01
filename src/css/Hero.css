@@ -74,7 +74,8 @@
   .section .section-img {
     left: unset;
     right: 50px !important;
-    height: 620px;
+    height: 530px;
+    top: 210px;
   }
   .section .section-wrapper {
     width: 570px;
@@ -91,7 +92,7 @@
   .section .section-img {
     left: unset;
     right: 50px !important;
-    height: 500px;
+    height: 400px;
     top: 230px;
   }
   .section .section-wrapper {
@@ -111,7 +112,7 @@
     width: 82%;
     margin-top: 43px;
     height: 500px;
-    top: 530px;
+    top: 400px;
     position: relative;
   }
   .section .section-wrapper {
@@ -138,8 +139,8 @@
     left: 10%;
     width: 82%;
     margin-top: 43px;
-    height: 500px;
-    top: 420px;
+    height: 430px;
+    top: 440px;
     position: relative;
   }
   .section .section-wrapper {

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import './../css/Hero.css';
 import $ from 'jquery';
+import photo1 from './../img/photo1.jpg';
 
 function Hero() {
     useEffect(() => {
@@ -51,7 +52,7 @@ function Hero() {
                 </div>
             </div>
             <div className="section-img fade-in">
-                <img src="" alt="main cover" />
+                <img src={photo1} alt="main cover" />
             </div>
         </div>
     );

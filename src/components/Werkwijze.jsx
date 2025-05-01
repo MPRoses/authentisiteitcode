@@ -3,6 +3,8 @@ import './../css/Hero.css';
 import './../css/Werkwijze.css';
 
 import stars from './../img/stars.svg';
+import img from './../img/werkwijze.png';
+
 
 function Werkwijze() {
     return (
@@ -25,7 +27,7 @@ function Werkwijze() {
             </div>
 
             <div className="section-img fade-in">
-                <img src="" alt="main cover"/>
+                <img src={img} alt="main cover"/>
             </div>
 
             <img src={stars} alt="stars" className="werkwijze-stars fade-in" />

@@ -17,6 +17,9 @@ butter.cleanup();
 root.render(
     <React.StrictMode>
         <App />
+        <div className="credits">
+            © 2025 Jorit Doeswijk. KVK: 97069280
+        </div>
     </React.StrictMode>
 );
 
