@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './../css/FAQ.css';
 import './../css/Hero.css';
+import mail from './../img/mail.png';
+import phone from './../img/phone.png';
+import location from './../img/location.png';
+import send from './../img/send.png';
 
 const questions = [
     {
@@ -31,11 +35,12 @@ const questions = [
 
 function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [popupVisible, setPopupVisible] = useState(false);
+    const formRef = useRef(null);
 
     const toggleAnswer = (index) => {
         setOpenIndex(prev => {
             const newIndex = prev === index ? null : index;
-            // Adjust height of body and content container by 50px when openIndex changes
             const rootElement = document.getElementById('root');
             const contentContainer = document.querySelector('.content-container');
 
@@ -48,6 +53,39 @@ function FAQ() {
             }
             return newIndex;
         });
+    };
+
+    const handleTextareaClick = () => {
+        setPopupVisible(true);
+        setTimeout(() => setPopupVisible(false), 2000);
+    };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        const popup = document.createElement('div');
+        popup.textContent = 'Je bericht is verstuurd!';
+        popup.style.position = 'fixed';
+        popup.style.top = '20px';
+        popup.style.left = '50%';
+        popup.style.transform = 'translateX(-50%)';
+        popup.style.backgroundColor = '#002D3C';
+        popup.style.color = 'white';
+        popup.style.padding = '0.7em 1.5em';
+        popup.style.borderRadius = '8px';
+        popup.style.zIndex = 9999;
+        popup.style.fontFamily = 'Inter, sans-serif';
+        popup.style.fontSize = '1rem';
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            popup.remove();
+        }, 4000); // 4 seconds
+
+        // Clear form inputs
+        if (formRef.current) {
+            formRef.current.reset();
+        }
     };
 
     return (
@@ -75,7 +113,49 @@ function FAQ() {
                 ))}
             </div>
 
-            <div className="contact"></div>
+            <div className="contact">
+                <div className="title">Kom in contact</div>
+                <div className="items-container">
+                    <div className="item">
+                        <img src={mail} alt="contact thingy" />
+                        <p>mailmail@outlook.com</p>
+                    </div>
+                    <div className="item">
+                        <img src={phone} alt="contact thingy" />
+                        <p>+31 06 12345678</p>
+                    </div>
+                    <div className="item">
+                        <img src={location} alt="contact thingy" />
+                        <p>Lisse, Bollenstreek</p>
+                    </div>
+                </div>
+
+                <div className="title title-form">Contactformulier</div>
+
+                <div className="contact-form">
+                    <form className="form" onSubmit={handleFormSubmit} ref={formRef}>
+                        <div className="form-row">
+                            <input type="text" placeholder="Volledige naam" name="name" required />
+                            <input type="tel" placeholder="Telefoonnummer" name="phone" required />
+                            <input type="email" placeholder="Email" name="email" required />
+                        </div>
+                        <div className="form-message">
+                            <textarea
+                                placeholder="Je bericht"
+                                name="message"
+                                required
+                                onClick={handleTextareaClick}
+                            ></textarea>
+                            <button type="submit" className="send-btn">
+                                <img src={send} className="clickable" alt="Verstuur" />
+                            </button>
+                        </div>
+                    </form>
+                    {popupVisible && (
+                        <div className="popup-send"></div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

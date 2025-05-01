@@ -1,6 +1,6 @@
 .fade-in {
   opacity: 0;
-  transition: opacity 1.1s cubic-bezier(0.18, 0.7, 0.34, 0.89) 0.6s;
+  transition: opacity 2s cubic-bezier(0.18, 0.7, 0.34, 0.89) 1s;
   will-change: opacity, transform;
 }
 
@@ -26,37 +26,112 @@
 }
 @media screen and (max-width: 1400px) {
   .content-container, body, #root {
-    height: 7220px;
+    height: 7420px;
   }
 }
 @media screen and (max-width: 1150px) {
   .content-container, body, #root {
-    height: 7320px;
+    height: 7520px;
   }
 }
 @media screen and (max-width: 1000px) {
   .content-container, body, #root {
-    height: 7020px;
+    height: 7220px;
   }
 }
 @media screen and (max-width: 900px) {
   .content-container, body, #root {
-    height: 7220px;
+    height: 7420px;
   }
 }
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 850px) {
   .content-container, body, #root {
-    height: 7420px;
+    height: 7720px;
   }
 }
 @media screen and (max-width: 768px) {
   .content-container, body, #root {
+    height: 7400px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .content-container, body, #root {
+    height: 7500px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .content-container, body, #root {
+    height: 7800px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .content-container, body, #root {
+    height: 7900px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .content-container, body, #root {
+    height: 8000px;
+  }
+}
+@media screen and (max-width: 596px) {
+  .content-container, body, #root {
+    height: 8100px;
+  }
+}
+@media screen and (max-width: 571px) {
+  .content-container, body, #root {
+    height: 8350px;
+  }
+}
+@media screen and (max-width: 544px) {
+  .content-container, body, #root {
+    height: 8550px;
+  }
+}
+@media screen and (max-width: 523px) {
+  .content-container, body, #root {
+    height: 8750px;
+  }
+}
+@media screen and (max-width: 486px) {
+  .content-container, body, #root {
     height: 8900px;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
   .content-container, body, #root {
-    height: 9500px;
+    height: 9200px;
+  }
+}
+@media screen and (max-width: 439px) {
+  .content-container, body, #root {
+    height: 9300px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .content-container, body, #root {
+    height: 9700px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .content-container, body, #root {
+    height: 9900px;
+  }
+}
+@media screen and (max-width: 369px) {
+  .content-container, body, #root {
+    height: 10000px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .content-container, body, #root {
+    height: 10200px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .content-container, body, #root {
+    height: 10400px;
   }
 }
 

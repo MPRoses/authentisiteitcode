@@ -24,11 +24,11 @@ function Werkwijze() {
 
             </div>
 
-            <div className="section-img">
+            <div className="section-img fade-in">
                 <img src="" alt="main cover"/>
             </div>
 
-            <img src={stars} alt="stars" className="werkwijze-stars" />
+            <img src={stars} alt="stars" className="werkwijze-stars fade-in" />
             <div className="steps-container">
                 <div className="step-item fade-in">
                     <div className="title">

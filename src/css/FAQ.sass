@@ -101,18 +101,164 @@ $cubicfast: .63s cubic-bezier(.18, .7, .34, .89)
         padding: 15px 25px
         max-height: 300px
         opacity: 1
+
   .contact
     width: 100%
     top: 200px
-    height: 600px
+    height: 900px
     background-color: $dark
     position: relative
     padding: 2em
+
+    .title
+      font-size: 3.5rem
+      font-weight: 600
+      color: white
+      font-family: "Inter", sans-serif
+      text-align: left
+      left: 300px
+      position: absolute
+      top: 50px
+      margin-bottom: 20px
+
+    .title-form
+      font-weight: 500
+      right: 790px
+      top: 80px
+      font-size: 2.2rem
+      left: unset
+
+  .items-container
+    width: 300px
+    height: fit-content
+    position: absolute
+    top: 140px
+    left: 300px
+
+    .item
+      width: 100%
+      margin-left: 30px
+      height: 50px
+      margin-bottom: 3%
+      display: flex
+      align-items: center
+
+      img
+        width: 30px
+        height: 30px
+
+      p
+        color: white
+        font-size: 1.1rem
+        font-family: "Inter", sans-serif
+        font-weight: 300
+        margin-left: 20px
+
+  .contact-form
+    width: 800px
+    height: auto
+    position: absolute
+    right: 250px
+    top: 140px
+    background-color: white
+    padding: 1.5em
+    border-radius: 25px
+    box-sizing: border-box
+
+    input:focus, textarea:focus
+      outline: none
+      border: 2px solid #002D3C
+
+    textarea, input
+      font-family: "Inter", sans-serif
+      color: #002D3C
+
+    .popup-send
+      position: absolute
+      bottom: -40px
+      right: 0
+      background-color: #002D3C
+      color: white
+      padding: 0.5em 1em
+      border-radius: 8px
+      font-size: 0.9rem
+      z-index: 10
+
+    .form
+      display: flex
+      flex-wrap: wrap
+      flex-direction: column
+      gap: 1em
+      width: 100%
+      height: 100%
+      font-family: "Inter", sans-serif
+
+      .form-row
+        display: flex
+        gap: 1em
+        flex-wrap: wrap
+        height: auto
+
+        input
+          flex: 1
+          min-width: 200px
+          height: 60px
+          border-radius: 10px
+          border: none
+          padding: 0 1em
+          font-size: 0.95rem
+          background-color: #f3f3f3
+          box-sizing: border-box
+
+      .form-message
+        position: relative
+        flex-grow: 1
+        height: auto
+        min-width: 100%
+        margin-top: 1em
+
+        textarea
+          width: 100%
+          height: 200px
+          border-radius: 10px
+          border: none
+          padding: 1em
+          resize: none
+          font-size: 0.95rem
+          background-color: #f3f3f3
+          box-sizing: border-box
+
+        .send-btn
+          position: absolute
+          bottom: 1em
+          right: 1em
+          background: none
+          border: none
+          cursor: pointer
+          padding: 0
+
+          img
+            width: 50px
+            height: 50px
+
+  @media screen and (max-width: 1700px)
+    .contact
+      .title:not(.title-form), .items-container
+        left: 100px
+
   @media screen and (max-width: 1630px)
     .items-wrapper
       .item
         .title
           font-size: .74rem
+
+  @media screen and (max-width: 1700px)
+    .contact
+      .title-form
+        right: 650px
+      .contact-form
+        right: 115px
+
   @media screen and (max-width: 1560px)
     top: 5600px
 
@@ -126,17 +272,52 @@ $cubicfast: .63s cubic-bezier(.18, .7, .34, .89)
 
       .faq-block
         width: 70vw
+
   @media screen and (max-width: 1400px)
     top: 4800px
+    .contact
+      .items-container
+        width: 700px
+        left: 80px
+        top: 500px
+        display: flex
+        flex-direction: row
+      .title-form
+        display: none
+      .contact-form
+        left: 100px
+
+  @media screen and (max-width: 1200px)
+    .contact
+      .contact-form
+        width: 700px
+        .form-row
+          display: flex
+          flex-wrap: wrap
+
   @media screen and (max-width: 890px)
+    .contact
+      .contact-form
+        width: 70%
+        left: 10%
+      .title
+        text-align: center
+      .items-container
+        top: 580px
+        width: 70%
+        p
+          font-size: 1rem
+
+
+
     .items-wrapper
       .faq-block
         width: 100%
         display: flex
-        justify-content: flex-start // align items to the left
+        justify-content: flex-start
       .item
-        width: 90% // slightly narrower for spacing
-        margin-left: 0 // ensure it starts left
+        width: 90%
+        margin-left: 0
         padding: 10px 50px 10px 20px
         display: flex
         align-items: center
@@ -152,54 +333,94 @@ $cubicfast: .63s cubic-bezier(.18, .7, .34, .89)
           top: auto
           left: auto
           transform: none
+
     top: 4900px
+
   @media screen and (max-width: 1000px)
     top: 4600px
+
   @media screen and (max-width: 920px)
     top: 4700px
+
   @media screen and (max-width: 845px)
     top: 4800px
+
   @media screen and (max-width: 795px)
     top: 4900px
+
   @media screen and (max-width: 768px)
     top: 4500px
     .contact
-      height: 300vh
+      height: 1500px
+
   @media screen and (max-width: 745px)
     top: 4600px
+
   @media screen and (max-width: 693px)
     top: 4700px
+
   @media screen and (max-width: 655px)
     top: 4800px
+    .contact
+      .items-container
+        display: flex
+        flex-direction: column
+      .title
+        font-size: 2.7rem
+
   @media screen and (max-width: 642px)
     top: 4900px
+
   @media screen and (max-width: 610px)
     top: 5000px
+  @media screen and (max-width: 596px)
+    .contact
+      .items-container
+        top: 650px
+
   @media screen and (max-width: 573px)
     top: 5100px
+
   @media screen and (max-width: 557px)
     top: 5200px
+
   @media screen and (max-width: 547px)
     top: 5300px
+
   @media screen and (max-width: 520px)
     top: 5500px
+
   @media screen and (max-width: 496px)
     top: 5600px
+
   @media screen and (max-width: 490px)
     top: 5700px
+
   @media screen and (max-width: 478px)
     top: 5900px
+
   @media screen and (max-width: 462px)
     top: 6000px
+
   @media screen and (max-width: 435px)
     top: 6100px
+    .contact
+      .title
+        left: 10% !important
+      .items-container
+        left: 10% !important
+
   @media screen and (max-width: 425px)
     top: 6400px
+
   @media screen and (max-width: 397px)
     top: 6500px
+
   @media screen and (max-width: 370px)
     top: 6560px
+
   @media screen and (max-width: 365px)
     top: 6650px
+
   @media screen and (max-width: 325px)
     top: 6750px
