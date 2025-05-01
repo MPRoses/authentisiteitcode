@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/authentisiteitcode/static/css/main.e9d07a44.css",
+    "main.js": "/authentisiteitcode/static/js/main.8c57cbed.js",
+    "static/js/453.5bb9f015.chunk.js": "/authentisiteitcode/static/js/453.5bb9f015.chunk.js",
+    "static/media/logo.svg": "/authentisiteitcode/static/media/logo.31f222b981c6113dc94b1bd86188301c.svg",
+    "static/media/dropdown.svg": "/authentisiteitcode/static/media/dropdown.8ee334d0f005d4b970e30e78a729f5aa.svg",
+    "static/media/stars.svg": "/authentisiteitcode/static/media/stars.db7e195f1195368f3087eea93bc01a0e.svg",
+    "index.html": "/authentisiteitcode/index.html",
+    "main.e9d07a44.css.map": "/authentisiteitcode/static/css/main.e9d07a44.css.map",
+    "main.8c57cbed.js.map": "/authentisiteitcode/static/js/main.8c57cbed.js.map",
+    "453.5bb9f015.chunk.js.map": "/authentisiteitcode/static/js/453.5bb9f015.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9d07a44.css",
+    "static/js/main.8c57cbed.js"
+  ]
+}
