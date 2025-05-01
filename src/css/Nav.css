@@ -183,6 +183,7 @@
   width: 100%;
   height: 100px;
   border-radius: 25px;
+  pointer-events: none;
   margin-bottom: 5px;
 }
 .nav .menu .items-container .menu-item:nth-child(3) {
@@ -204,6 +205,9 @@
 }
 .nav .menu.active .menu-bg {
   transform: scale(100);
+}
+.nav .menu.active .items-container .menu-item {
+  pointer-events: all;
 }
 
 @media screen and (max-width: 1000px) {

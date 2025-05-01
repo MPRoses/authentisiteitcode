@@ -161,6 +161,7 @@ $accent: #3198A5
       width: 100%
       height: 100px
       border-radius: 25px
+      pointer-events: none
       margin-bottom: 5px
       &:nth-child(3)
         margin: 0
@@ -178,6 +179,9 @@ $accent: #3198A5
     opacity: 1
     .menu-bg
       transform: scale(100)
+    .items-container
+      .menu-item
+        pointer-events: all
 
 
 @media screen and (max-width: 1000px)
