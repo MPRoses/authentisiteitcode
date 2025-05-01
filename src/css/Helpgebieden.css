@@ -26,15 +26,21 @@
   margin-bottom: 20px;
 }
 .helpgebieden .items-wrapper {
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   position: relative;
   margin: 325px auto 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 .helpgebieden .items-wrapper .item {
-  width: 350px;
+  flex: 1 1 30%;
+  max-width: 350px;
+  min-width: 280px;
   background-color: #3198A5;
   border-radius: 40px;
   padding-right: 10px;
@@ -62,6 +68,52 @@
   font-weight: 400;
   font-size: 0.9rem;
   text-align: left;
+}
+@media screen and (max-width: 1000px) {
+  .helpgebieden {
+    top: 1900px !important;
+  }
+  .helpgebieden .items-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .helpgebieden .items-wrapper .item {
+    width: 75%;
+    max-width: none;
+    left: -20px !important;
+  }
+  .helpgebieden .section-wrapper .section-bio {
+    font-size: 1rem;
+    text-align: left;
+    left: -10px !important;
+    width: 74vw;
+  }
+}
+@media screen and (max-width: 795px) {
+  .helpgebieden {
+    top: 2000px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .helpgebieden {
+    top: 1500px !important;
+  }
+}
+@media screen and (max-width: 530px) {
+  .helpgebieden {
+    top: 1550px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .helpgebieden {
+    top: 1600px !important;
+  }
+}
+@media screen and (max-width: 470px) {
+  .helpgebieden {
+    top: 1660px !important;
+  }
 }
 
 /*# sourceMappingURL=Helpgebieden.css.map */

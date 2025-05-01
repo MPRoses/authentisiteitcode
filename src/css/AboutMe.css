@@ -16,6 +16,12 @@
   width: 40vw;
   max-width: 762px;
 }
+.about-me .section-wrapper .section-bio .read-more {
+  display: none;
+}
+.about-me .section-wrapper .section-bio .full-bio {
+  display: block;
+}
 .about-me .section-wrapper .section-bio p {
   margin-bottom: 20px;
 }
@@ -86,6 +92,36 @@
     top: 805px;
     right: 343px;
     display: none;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .about-me .section-wrapper .section-bio {
+    font-size: 1.1rem !important;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .about-me .section-wrapper .section-bio {
+    font-size: 0.97rem !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-me .section-img {
+    display: none;
+  }
+  .about-me .section-wrapper .section-bio {
+    width: 80vw !important;
+    max-width: 1300px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-me .section-wrapper {
+    top: 150px;
+  }
+  .about-me .read-more {
+    display: block !important;
+  }
+  .about-me .full-bio {
+    display: none !important;
   }
 }
 

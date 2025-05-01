@@ -32,8 +32,11 @@ function AboutMe() {
                         Ook heb ik gewerkt voor het jeugd en gezinsteam Leiden namens stichting MEE Zuid Holland Noord en
                         ben ik begeleider geweest bij Ons Tweede Thuis.
                     </p>
+                    <p className="fade-in read-more">
+                        Na mijn tijd bij SEIN heb ik ..... (LEES MEER)
+                    </p>
 
-                    <p className="fade-in">
+                    <p className="fade-in full-bio">
                         Tijdens mijn werk als begeleider bij de diverse instellingen heb ik mij altijd zeer geïnteresseerd
                         in de vraag waar gedrag vandaan komt, waar ik dagelijks mee te maken kreeg. Ik vind het belangrijk
                         dat ik kan zorgen dat iemand zo fijn mogelijk de dag doorkomt. Vanuit deze gedachten heb ik
@@ -43,7 +46,7 @@ function AboutMe() {
                         verstandelijke beperking en het netwerk eromheen en de begeleiders.
                     </p>
 
-                    <p className="fade-in">
+                    <p className="fade-in full-bio">
                         In mijn werk als orthopedagoog is mij opgevallen dat de mensen met wie ik werk zeer veel moeite
                         hebben met het leven in een groep. Zij krijgen de gehele dag veel prikkels vanuit de omgeving. Van
                         mensen met een Autisme Spectrum Stoornis is bekend dat zij vaak problemen ervaren in het verwerken
@@ -53,7 +56,7 @@ function AboutMe() {
                         en zonder een ontwikkelingsachterstand/ verstandelijke beperking.
                     </p>
 
-                    <p className="fade-in">
+                    <p className="fade-in full-bio">
                         In mijn werk als Orthopedagoog heb ik ervaren dat diagnostiek vaak onvolledig of verouderd is. Dit
                         kan ervoor zorgen dat aansluiting bij de kern van de problemen niet altijd goed lukt. Daarnaast is
                         er onvoldoende aandacht voor uitleg wat de resultaten van de diagnostiek betekent voor iedereen die
@@ -64,13 +67,13 @@ function AboutMe() {
                         om te leren gaan.
                     </p>
 
-                    <p className="fade-in">
+                    <p className="fade-in full-bio">
                         Vanuit het idee dat ieder mens uniek en daardoor Authentiek is en mag zijn bied ik mijn diensten aan
                         ter ondersteuning en kennisverspreiding. Ik richt mij daarin op de vraag hoe het is om met deze
                         problemen om te gaan als persoon.
                     </p>
 
-                    <p className="fade-in">
+                    <p className="fade-in full-bio">
                         Mijn hulp richt zich op de mens met Autisme en/of prikkelverwerkingsproblemen, maar ook op de
                         omgeving waarin iemand zich staande moet houden. De ondersteuning die ik bied richt zich
                         diagnostiek, persoonlijke ondersteuning en op het geven van uitleg aan familie, scholen,

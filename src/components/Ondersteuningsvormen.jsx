@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import $ from 'jquery';
+import React from 'react';
 import './../css/Ondersteuningsvormen.css';
 import './../css/Hero.css';
 

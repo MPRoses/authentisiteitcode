@@ -103,8 +103,101 @@ $cubicfast: .63s cubic-bezier(.18, .7, .34, .89)
         opacity: 1
   .contact
     width: 100%
-    top: 500px
+    top: 200px
     height: 500px
     background-color: $dark
-    position: absolute
+    position: relative
     padding: 2em
+  @media screen and (max-width: 1630px)
+    .items-wrapper
+      .item
+        .title
+          font-size: .74rem
+  @media screen and (max-width: 1560px)
+    top: 5600px
+
+    .section-wrapper
+      .section-title
+        font-size: 2rem !important
+
+    .items-wrapper
+      flex-direction: column
+      align-items: center
+
+      .faq-block
+        width: 70vw
+  @media screen and (max-width: 1400px)
+    top: 4800px
+  @media screen and (max-width: 890px)
+    .items-wrapper
+      .faq-block
+        width: 100%
+        display: flex
+        justify-content: flex-start // align items to the left
+      .item
+        width: 90% // slightly narrower for spacing
+        margin-left: 0 // ensure it starts left
+        padding: 10px 50px 10px 20px
+        display: flex
+        align-items: center
+        position: relative
+
+        .title
+          max-width: calc(100% - 90px)
+          white-space: normal
+          word-break: break-word
+          line-height: 1.3
+          font-size: 0.75rem
+          position: relative
+          top: auto
+          left: auto
+          transform: none
+    top: 4900px
+  @media screen and (max-width: 1000px)
+    top: 4600px
+  @media screen and (max-width: 920px)
+    top: 4700px
+  @media screen and (max-width: 845px)
+    top: 4800px
+  @media screen and (max-width: 795px)
+    top: 4900px
+  @media screen and (max-width: 768px)
+    top: 4500px
+  @media screen and (max-width: 745px)
+    top: 4600px
+  @media screen and (max-width: 693px)
+    top: 4700px
+  @media screen and (max-width: 655px)
+    top: 4800px
+  @media screen and (max-width: 642px)
+    top: 4900px
+  @media screen and (max-width: 610px)
+    top: 5000px
+  @media screen and (max-width: 573px)
+    top: 5100px
+  @media screen and (max-width: 557px)
+    top: 5200px
+  @media screen and (max-width: 547px)
+    top: 5300px
+  @media screen and (max-width: 520px)
+    top: 5500px
+  @media screen and (max-width: 496px)
+    top: 5600px
+  @media screen and (max-width: 490px)
+    top: 5700px
+  @media screen and (max-width: 478px)
+    top: 5900px
+  @media screen and (max-width: 462px)
+    top: 6000px
+  @media screen and (max-width: 435px)
+    top: 6100px
+  @media screen and (max-width: 425px)
+    top: 6400px
+  @media screen and (max-width: 397px)
+    top: 6500px
+  @media screen and (max-width: 370px)
+    top: 6560px
+  @media screen and (max-width: 365px)
+    top: 6650px
+  @media screen and (max-width: 325px)
+    top: 6750px

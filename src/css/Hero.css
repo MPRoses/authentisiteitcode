@@ -70,5 +70,99 @@
   display: flex;
   margin-right: 40px;
 }
+@media screen and (max-width: 1550px) {
+  .section .section-img {
+    left: unset;
+    right: 50px !important;
+    height: 620px;
+  }
+  .section .section-wrapper {
+    width: 570px;
+    left: 100px;
+  }
+  .section .section-wrapper .section-title {
+    font-size: 2.8rem;
+  }
+  .section .section-wrapper .section-bio {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .section .section-img {
+    left: unset;
+    right: 50px !important;
+    height: 500px;
+    top: 230px;
+  }
+  .section .section-wrapper {
+    width: 410px;
+    left: 60px;
+  }
+  .section .section-wrapper .section-title {
+    font-size: 2rem;
+  }
+  .section .section-wrapper .section-bio {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section .section-img {
+    left: 10%;
+    width: 82%;
+    margin-top: 43px;
+    height: 500px;
+    top: 530px;
+    position: relative;
+  }
+  .section .section-wrapper {
+    width: calc(85% - 20px);
+    left: 50%;
+    top: 160px;
+    transform: translateX(-50%);
+  }
+  .section .section-wrapper .section-title {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  .section .section-wrapper .section-bio {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .section .section-wrapper .hero-cta-container .hero-cta {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 430px) {
+  .section .section-img {
+    left: 10%;
+    width: 82%;
+    margin-top: 43px;
+    height: 500px;
+    top: 510px;
+    position: relative;
+  }
+  .section .section-wrapper {
+    width: calc(85% - 20px);
+    left: 50%;
+    top: 160px;
+    transform: translateX(-50%);
+  }
+  .section .section-wrapper .section-title {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+  .section .section-wrapper .section-bio {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .section .section-wrapper .hero-cta-container .hero-cta {
+    font-size: 0.7rem !important;
+  }
+}
+@media screen and (max-width: 385px) {
+  .section .section-img {
+    top: 550px;
+  }
+}
 
 /*# sourceMappingURL=Hero.css.map */

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './../css/Hero.css';
+import $ from 'jquery';
 
 function Hero() {
     useEffect(() => {
@@ -19,7 +20,7 @@ function Hero() {
 
         // CTA: Hoe ik help
         $('.hero-cta:contains("Hoe ik help")').on('click', function () {
-            scrollToSection('.helpgebieden', 0.11);
+            scrollToSection('.helpgebieden', 0.03);
         });
 
         return () => {

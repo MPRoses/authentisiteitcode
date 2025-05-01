@@ -55,5 +55,193 @@
 .werkwijze .steps-container .step-item:nth-child(3) {
   margin-bottom: 0;
 }
+@media screen and (max-width: 1780px) {
+  .werkwijze .werkwijze-stars {
+    display: none;
+  }
+}
+@media screen and (max-width: 1560px) {
+  .werkwijze {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+  }
+  .werkwijze .section-wrapper {
+    width: 80vw;
+    text-align: left;
+  }
+  .werkwijze .section-wrapper .section-bio {
+    width: 80vw;
+    max-width: none;
+  }
+  .werkwijze .section-img {
+    position: relative;
+    width: 80vw;
+    left: 0;
+    top: 70px;
+    margin: 60px;
+  }
+  .werkwijze .steps-container {
+    position: relative;
+    width: 80vw;
+    top: unset;
+    right: unset;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .werkwijze .steps-container .step-item {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .werkwijze .steps-container .step-item .bio {
+    padding-left: 0;
+  }
+  .werkwijze .steps-container .step-item:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 1560px) {
+  .werkwijze .section-img {
+    top: 100px;
+  }
+}
+@media screen and (max-width: 546px) {
+  .werkwijze .section-img {
+    top: 150px;
+  }
+  .werkwijze .steps-container {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .werkwijze {
+    top: 4800px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .werkwijze {
+    top: 4600px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .werkwijze {
+    top: 4700px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .werkwijze {
+    top: 4800px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .werkwijze {
+    top: 4900px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .werkwijze {
+    top: 4500px;
+  }
+}
+@media screen and (max-width: 745px) {
+  .werkwijze {
+    top: 4600px;
+  }
+}
+@media screen and (max-width: 693px) {
+  .werkwijze {
+    top: 4700px;
+  }
+}
+@media screen and (max-width: 655px) {
+  .werkwijze {
+    top: 4800px;
+  }
+}
+@media screen and (max-width: 642px) {
+  .werkwijze {
+    top: 4900px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .werkwijze {
+    top: 5000px;
+  }
+}
+@media screen and (max-width: 573px) {
+  .werkwijze {
+    top: 5100px;
+  }
+}
+@media screen and (max-width: 557px) {
+  .werkwijze {
+    top: 5200px;
+  }
+}
+@media screen and (max-width: 547px) {
+  .werkwijze {
+    top: 5300px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .werkwijze {
+    top: 5500px;
+  }
+}
+@media screen and (max-width: 496px) {
+  .werkwijze {
+    top: 5600px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .werkwijze {
+    top: 5700px;
+  }
+}
+@media screen and (max-width: 478px) {
+  .werkwijze {
+    top: 5900px;
+  }
+}
+@media screen and (max-width: 462px) {
+  .werkwijze {
+    top: 6000px;
+  }
+}
+@media screen and (max-width: 435px) {
+  .werkwijze {
+    top: 6100px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .werkwijze {
+    top: 6400px;
+  }
+}
+@media screen and (max-width: 397px) {
+  .werkwijze {
+    top: 6500px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .werkwijze {
+    top: 6560px;
+  }
+}
+@media screen and (max-width: 365px) {
+  .werkwijze {
+    top: 6650px;
+  }
+}
+@media screen and (max-width: 325px) {
+  .werkwijze {
+    top: 6750px;
+  }
+}
 
 /*# sourceMappingURL=Werkwijze.css.map */

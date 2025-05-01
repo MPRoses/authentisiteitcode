@@ -12,6 +12,10 @@
       font-size: 1.2rem
       width: 40vw
       max-width: 762px
+      .read-more
+        display: none
+      .full-bio
+        display: block
       p
         margin-bottom: 20px
   .section-img
@@ -66,3 +70,26 @@
       top: 805px
       right: 343px
       display: none
+  @media screen and (max-width: 1500px)
+    .section-wrapper
+      .section-bio
+        font-size: 1.1rem !important
+  @media screen and (max-width: 1300px)
+    .section-wrapper
+      .section-bio
+        font-size: .97rem !important
+  @media screen and (max-width: 1000px)
+    .section-img
+      display: none
+    .section-wrapper
+      .section-bio
+        width: 80vw !important
+        max-width: 1300px !important
+  @media screen and (max-width: 767px)
+    .section-wrapper
+      top: 150px
+    .read-more
+      display: block !important
+    .full-bio
+      display: none !important
+

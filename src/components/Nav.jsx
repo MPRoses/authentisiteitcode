@@ -22,7 +22,6 @@ function Nav() {
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
 
-        // Scroll helper with custom offset
         function scrollToSection(selector, offsetMultiplier = 0.15) {
             const target = $(selector);
             if (target.length) {
@@ -31,20 +30,26 @@ function Nav() {
             }
         }
 
-        // "Over mij" scroll to .about-me with -0.15 offset
         $('.nav-item:contains("Over mij") .clickable').on('click', function () {
             scrollToSection('.about-me', 0.15);
         });
 
-        // "Hoe ik help" scroll to .helpgebieden with -0.12 offset
         $('.nav-item:contains("Hoe ik help") > .clickable').on('click', function () {
-            scrollToSection('.helpgebieden', 0.11);
+            scrollToSection('.helpgebieden', 0.03);
         });
 
-        // "Helpgebieden" submenu scroll to .helpgebieden with -0.12 offset
         $('.dropdown-item:contains("Helpgebieden")').on('click', function () {
-            scrollToSection('.helpgebieden', 0.11);
+            scrollToSection('.helpgebieden', 0.03);
         });
+
+        $('.dropdown-item:contains("Ondersteuningsvormen")').on('click', function () {
+            scrollToSection('.Ondersteuningsvormen', 0.03);
+        });
+
+        $('.dropdown-item:contains("Werkwijze")').on('click', function () {
+            scrollToSection('.werkwijze', 0.15);
+        });
+
 
         return () => {
             $(window).off('scroll');
