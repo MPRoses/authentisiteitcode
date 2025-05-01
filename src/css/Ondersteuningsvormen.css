@@ -81,6 +81,12 @@
   height: 300px;
   top: 60px;
 }
+@media screen and (max-width: 1900px) {
+  .Ondersteuningsvormen .items-wrapper .wrapper-item:nth-of-type(2) .item-text {
+    left: unset;
+    right: -900px;
+  }
+}
 @media screen and (max-width: 1650px) {
   .Ondersteuningsvormen .items-wrapper {
     left: -100px;

@@ -30,7 +30,7 @@ function Werkwijze() {
 
             <img src={stars} alt="stars" className="werkwijze-stars" />
             <div className="steps-container">
-                <div className="step-item">
+                <div className="step-item fade-in">
                     <div className="title">
                         Kennismaking & intake
                     </div>
@@ -38,14 +38,14 @@ function Werkwijze() {
                         Tijdens een laagdrempelig gesprek maken we kennis en brengen we samen in kaart welke vragen of zorgen er zijn. Dit kan bij u thuis, op locatie of online.
                     </div>
                 </div>
-                <div className="step-item">
+                <div className="step-item fade-in">
                     <div className="title">
                         Afstemming op maat
                     </div>
                     <div className="bio">
                         Geen standaardtrajecten, maar een unieke aanpak die past. Ik kijk naar de context, de hulpvraag en de mogelijkheden. Of het nu gaat om een eenmalig consult, langdurige begeleiding, of een scholingstraject.                    </div>
                 </div>
-                <div className="step-item">
+                <div className="step-item fade-in">
                     <div className="title">
                         Samenwerking & communicatie
                     </div>

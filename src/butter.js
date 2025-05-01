@@ -106,6 +106,7 @@
 
             if (nav) {
                 nav.style.transform = `${movementFixedElements}`;
+                document.querySelector(".preloader").style.transform = `${movementFixedElements}`;
             }
             /*
             var navbarElement = document.querySelector(".navbar");

@@ -31,8 +31,8 @@ function Hero() {
 
     return (
         <div className="section">
-            <div className="section-wrapper">
-                <div className="section-title">
+            <div className="section-wrapper fade-in">
+                <div className="section-title ">
                     Rust en richting bij autisme<br />
                     en prikkelverwerking
                 </div>
@@ -50,7 +50,7 @@ function Hero() {
                     </div>
                 </div>
             </div>
-            <div className="section-img">
+            <div className="section-img fade-in">
                 <img src="" alt="main cover" />
             </div>
         </div>

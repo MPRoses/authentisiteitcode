@@ -7,7 +7,7 @@ function Helpgebieden() {
 
     return (
         <div className="helpgebieden section">
-            <div className="section-wrapper">
+            <div className="section-wrapper fade-in">
                 <div className="section-title">
                     Ik kijk graag naar wat wél werkt
                 </div>
@@ -15,7 +15,7 @@ function Helpgebieden() {
                     Iedere persoon met autisme of een verstandelijke beperking is uniek. Ik help u inzicht krijgen in gedrag, prikkelverwerking en ondersteuningsbehoeften – zodat u, uw kind of cliënt meer rust en balans kan ervaren in het dagelijks leven.
                 </div>
             </div>
-            <div className="items-wrapper">
+            <div className="items-wrapper fade-in">
                 <div className="item">
                     <div className="item-content">
                         <div className="title">

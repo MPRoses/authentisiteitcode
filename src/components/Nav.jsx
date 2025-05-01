@@ -38,6 +38,11 @@ function Nav() {
             scrollToSection('.helpgebieden', 0.03);
         });
 
+        // Fix the Contact click handler to target the nav-item itself
+        $('.nav-item:contains("Contact")').on('click', function () {
+            scrollToSection('.contact', 0.03);
+        });
+
         $('.dropdown-item:contains("Helpgebieden")').on('click', function () {
             scrollToSection('.helpgebieden', 0.03);
         });
@@ -50,7 +55,6 @@ function Nav() {
             scrollToSection('.werkwijze', 0.15);
         });
 
-
         return () => {
             $(window).off('scroll');
             $('.nav-item:contains("Over mij") .clickable').off('click');
@@ -59,9 +63,13 @@ function Nav() {
         };
     }, []);
 
+    const handleLogoClick = () => {
+        window.location.reload();
+    };
+
     return (
         <div className="nav">
-            <div className="nav-logo clickable">
+            <div className="nav-logo clickable" onClick={handleLogoClick}>
                 <img src={logo} alt="site logo with text" />
             </div>
             <div className="nav-wrapper">

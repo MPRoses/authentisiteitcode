@@ -21,7 +21,12 @@ code {
 
 #root, body {
   width: 100vw;
-  height: 8410px;
+  overflow-x: hidden;
+}
+
+#root::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar {

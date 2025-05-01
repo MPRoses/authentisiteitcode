@@ -129,6 +129,7 @@
     text-align: left;
   }
   .section .section-wrapper .hero-cta-container .hero-cta {
+    display: none;
     font-size: 1rem !important;
   }
 }
@@ -138,7 +139,7 @@
     width: 82%;
     margin-top: 43px;
     height: 500px;
-    top: 510px;
+    top: 420px;
     position: relative;
   }
   .section .section-wrapper {

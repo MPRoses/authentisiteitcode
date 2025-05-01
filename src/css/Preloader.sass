@@ -1,0 +1,49 @@
+@keyframes pulse-color
+  0%, 100%
+    background-color: #002D3C
+  50%
+    background-color: white
+
+.preloader
+  width: 100vw
+  height: 100vh
+  position: fixed
+  background-color: white
+  top: 0
+  left: -15px
+  z-index: 5000
+  opacity: 0
+  pointer-events: none !important
+  filter: blur(15px)
+  transition: opacity cubic-bezier(.84,.38,.27,.82) .6s, blur ease .6s
+
+  .loader
+    width: 70px
+    height: 40px
+    position: absolute
+    top: 50vh
+    left: calc(50vw - 35px)
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    div
+      width: 10px
+      height: 10px
+      background-color: #002D3C
+      border-radius: 25px
+      animation: pulse-color 2s cubic-bezier(.84,.38,.27,.82) infinite
+
+      &:nth-child(1)
+        animation-delay: 0s
+
+      &:nth-child(2)
+        animation-delay: 0.33s
+
+      &:nth-child(3)
+        animation-delay: 0.66s
+
+  &.active
+    opacity: 1
+    filter: blur(0px)
+    pointer-events: all

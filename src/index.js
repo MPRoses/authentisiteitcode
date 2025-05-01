@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 butter.cleanup();
 
     butter.init({
-        wrapperDamper: 0.016
+        wrapperDamper: 1
 
 })
 

@@ -33,18 +33,32 @@ function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleAnswer = (index) => {
-        setOpenIndex(prev => (prev === index ? null : index));
+        setOpenIndex(prev => {
+            const newIndex = prev === index ? null : index;
+            // Adjust height of body and content container by 50px when openIndex changes
+            const rootElement = document.getElementById('root');
+            const contentContainer = document.querySelector('.content-container');
+
+            if (newIndex !== null) {
+                if (rootElement) rootElement.style.height = `${rootElement.offsetHeight + 50}px`;
+                if (contentContainer) contentContainer.style.height = `${contentContainer.offsetHeight + 50}px`;
+            } else {
+                if (rootElement) rootElement.style.height = `${rootElement.offsetHeight - 50}px`;
+                if (contentContainer) contentContainer.style.height = `${contentContainer.offsetHeight - 50}px`;
+            }
+            return newIndex;
+        });
     };
 
     return (
         <div className="FAQ section">
             <div className="section-wrapper">
-                <div className="section-title">FAQ</div>
+                <div className="section-title fade-in">FAQ</div>
             </div>
 
             <div className="items-wrapper">
                 {questions.map((item, index) => (
-                    <div className="faq-block" key={index}>
+                    <div className="faq-block fade-in" key={index}>
                         <div
                             className={`item clickable ${openIndex === index ? 'active' : ''}`}
                             onClick={() => toggleAnswer(index)}
