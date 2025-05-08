@@ -56,8 +56,8 @@ $accent: #3198A5
         position: absolute
         overflow: hidden
         top: 50px
-        border-radius: 1.43rem
-        font-size: 0.7rem
+        border-radius: 20px
+        font-size: 0.75rem
         font-weight: 600
         left: 0
         background-color: white
@@ -67,13 +67,17 @@ $accent: #3198A5
         align-items: center
         border: 0 solid white
         transition: height $cubicfast, font-size $cubicfast, border $cubicfast
+        .dropdown-item
+          margin: 3px 0 3px 0
+          &:nth-child(2)
+            font-size: .72rem
       &:nth-child(3)
         background-color: $accent
         color: white
       &:nth-child(2):hover
         opacity: 1 !important
         .nav-dropdown
-          height: 50px
+          height: 65px
           border: 1px solid #002D3C
 .nav-semi
   height: 90px

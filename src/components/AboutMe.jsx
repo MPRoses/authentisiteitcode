@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './../css/Hero.css';
 import './../css/AboutMe.css';
 
@@ -10,6 +10,12 @@ import photo9 from './../img/photo9.jpg';
 import photo10 from './../img/photo10.jpg';
 
 function AboutMe() {
+
+    const [showFullBio, setShowFullBio] = useState(false)
+
+    const handleShowBio = () => setShowFullBio(true)
+    const handleHideBio = () => setShowFullBio(false)
+
     return (
         <div className="about-me section">
 
@@ -40,7 +46,20 @@ function AboutMe() {
                         ben ik begeleider geweest bij Ons Tweede Thuis.
                     </p>
                     <p className="read-more">
-                        Na mijn tijd bij SEIN heb ik ..... (LEES MEER, moet nog even toevoegen, is handig als semi apart op telefoon)
+                        Na mijn tijd bij SEIN heb ik .....
+                        <div className="read-more-btn btn clickable">
+                            Lees Meer
+                        </div>
+
+                        {showFullBio && (
+                            <div className="bio-overlay">
+                                <div className="close-btn clickable" onClick={handleHideBio}>×</div>
+                                <div className="bio-content">
+                                    {/* Content or images go here */}
+                                </div>
+                            </div>
+                        )}
+
                     </p>
 
                     <p className="full-bio">

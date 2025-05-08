@@ -1,10 +1,14 @@
 import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 import './../css/FAQ.css';
 import './../css/Hero.css';
 import mail from './../img/mail.png';
 import phone from './../img/phone.png';
 import location from './../img/location.png';
 import send from './../img/send.png';
+
+
 
 const questions = [
     {
@@ -63,30 +67,36 @@ function FAQ() {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        const popup = document.createElement('div');
-        popup.textContent = 'Je bericht is verstuurd!';
-        popup.style.position = 'fixed';
-        popup.style.top = '20px';
-        popup.style.left = '50%';
-        popup.style.transform = 'translateX(-50%)';
-        popup.style.backgroundColor = '#002D3C';
-        popup.style.color = 'white';
-        popup.style.padding = '0.7em 1.5em';
-        popup.style.borderRadius = '8px';
-        popup.style.zIndex = 9999;
-        popup.style.fontFamily = 'Inter, sans-serif';
-        popup.style.fontSize = '1rem';
-        document.body.appendChild(popup);
+        emailjs
+            .sendForm('service_m0qnznj', 'template_750dz28', formRef.current, {
+                publicKey: 'eycXguGEQAxy7qlgN',
+            })
+            .then(() => {
+                const popup = document.createElement('div');
+                popup.textContent = 'Je bericht is verstuurd!';
+                popup.style.position = 'fixed';
+                popup.style.top = '20px';
+                popup.style.left = '50%';
+                popup.style.transform = 'translateX(-50%)';
+                popup.style.backgroundColor = '#002D3C';
+                popup.style.color = 'white';
+                popup.style.padding = '0.7em 1.5em';
+                popup.style.borderRadius = '8px';
+                popup.style.zIndex = 9999;
+                popup.style.fontFamily = 'Inter, sans-serif';
+                popup.style.fontSize = '1rem';
+                document.body.appendChild(popup);
+                setTimeout(() => popup.remove(), 4000);
 
-        setTimeout(() => {
-            popup.remove();
-        }, 4000); // 4 seconds
-
-        // Clear form inputs
-        if (formRef.current) {
-            formRef.current.reset();
-        }
+                if (formRef.current) {
+                    formRef.current.reset();
+                }
+            })
+            .catch((error) => {
+                console.error('FAILED TO SEND...', error.text);
+            });
     };
+
 
     return (
         <div className="FAQ section">
@@ -135,9 +145,10 @@ function FAQ() {
                 <div className="contact-form fade-in">
                     <form className="form" onSubmit={handleFormSubmit} ref={formRef}>
                         <div className="form-row">
-                            <input type="text" placeholder="Volledige naam" name="name" required />
-                            <input type="tel" placeholder="Telefoonnummer" name="phone" required />
-                            <input type="email" placeholder="Email" name="email" required />
+                            <input type="text" placeholder="Volledige naam" name="name" required/>
+                            <input type="tel" placeholder="Telefoonnummer" name="phone" required/>
+                            <input type="email" placeholder="Email" name="email" required/>
+                            <input type="hidden" name="time" style={{display: "none"}} value={new Date().toLocaleString()}/>
                         </div>
                         <div className="form-message">
                             <textarea

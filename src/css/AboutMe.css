@@ -19,6 +19,50 @@
 .about-me .section-wrapper .section-bio .read-more {
   display: none;
 }
+.about-me .section-wrapper .section-bio .read-more .read-more-btn {
+  width: 120px;
+  background-color: #002D3C;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  left: 0;
+  bottom: -20px;
+  position: relative;
+  margin-left: 0;
+}
+.about-me .section-wrapper .section-bio .read-more .bio-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  z-index: 9999;
+  padding: 2rem 1.2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.about-me .section-wrapper .section-bio .read-more .bio-overlay .close-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  z-index: 10000;
+}
+.about-me .section-wrapper .section-bio .read-more .bio-overlay .bio-content {
+  margin-top: 3rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.about-me .section-wrapper .section-bio .read-more .bio-overlay .bio-content p {
+  margin-bottom: 1.2rem;
+}
 .about-me .section-wrapper .section-bio .full-bio {
   display: block;
 }
@@ -115,7 +159,7 @@
 }
 @media screen and (max-width: 767px) {
   .about-me .section-wrapper {
-    top: 150px;
+    top: 90px;
   }
   .about-me .read-more {
     display: block !important;

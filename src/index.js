@@ -9,10 +9,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 butter.cleanup();
 
+if (window.innerWidth > 768) {
     butter.init({
-        wrapperDamper: 0.06
+        wrapperDamper: 0.04
+    });
+}
 
-})
 
 root.render(
     <React.StrictMode>
