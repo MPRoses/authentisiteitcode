@@ -384,7 +384,7 @@
     flex-direction: column;
   }
   .FAQ .contact .title {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 }
 @media screen and (max-width: 642px) {
@@ -447,10 +447,10 @@
     top: 6100px;
   }
   .FAQ .contact .title {
-    left: 10% !important;
+    left: 10%;
   }
   .FAQ .contact .items-container {
-    left: 10% !important;
+    left: 10%;
   }
 }
 @media screen and (max-width: 425px) {

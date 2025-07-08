@@ -220,8 +220,11 @@
   .nav .nav-wrapper {
     display: none;
   }
-  .nav .burger, .nav .menu {
+  .nav .burger {
     pointer-events: all;
+    display: block;
+  }
+  .nav .menu {
     display: block;
   }
 }

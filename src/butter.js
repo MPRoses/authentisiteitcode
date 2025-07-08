@@ -107,6 +107,7 @@
             if (nav) {
                 nav.style.transform = `${movementFixedElements}`;
                 document.querySelector(".preloader").style.transform = `${movementFixedElements}`;
+                document.querySelector(".about-me-mobile").style.transform = `${movementFixedElementsMain}`;
 
             }
             /*

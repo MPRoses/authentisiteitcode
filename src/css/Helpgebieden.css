@@ -77,7 +77,7 @@
 }
 @media screen and (max-width: 1000px) {
   .helpgebieden {
-    top: 1900px !important;
+    top: 1900px;
   }
   .helpgebieden .items-wrapper {
     flex-direction: column;
@@ -98,27 +98,28 @@
 }
 @media screen and (max-width: 795px) {
   .helpgebieden {
-    top: 2000px !important;
+    pointer-events: none;
+    top: 2000px;
   }
 }
 @media screen and (max-width: 768px) {
   .helpgebieden {
-    top: 1500px !important;
+    top: 1500px;
   }
 }
 @media screen and (max-width: 530px) {
   .helpgebieden {
-    top: 1550px !important;
+    top: 1550px;
   }
 }
 @media screen and (max-width: 490px) {
   .helpgebieden {
-    top: 1600px !important;
+    top: 1600px;
   }
 }
 @media screen and (max-width: 470px) {
   .helpgebieden {
-    top: 1660px !important;
+    top: 1660px;
   }
 }
 

@@ -10,12 +10,14 @@ import Ondersteuningsvormen from "./components/Ondersteuningsvormen";
 import Werkwijze from "./components/Werkwijze";
 import FAQ from "./components/FAQ";
 import Preloader from "./components/Preloader";
+import AboutMeMobile from "./components/AboutMeMobile";
 
 function App() {
     const [containerStyle, setContainerStyle] = useState({});
     const [preloaderActive, setPreloaderActive] = useState(true);
     const [spacerHeight, setSpacerHeight] = useState(0);
 
+    // existing preloader effect
     useEffect(() => {
         const timer = setTimeout(() => {
             setPreloaderActive(false);
@@ -23,6 +25,7 @@ function App() {
         return () => clearTimeout(timer);
     }, []);
 
+    // existing resize & spacer effect
     useEffect(() => {
         const handleResize = () => {
             const innerWidth = window.innerWidth;
@@ -56,6 +59,7 @@ function App() {
         };
     }, []);
 
+    // existing fade-in effect
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -84,6 +88,23 @@ function App() {
         };
     }, []);
 
+    // new: preload all images immediately
+    useEffect(() => {
+        const imgs = Array.from(document.querySelectorAll("img"));
+        imgs.forEach((img) => {
+            // if you're using data-src for lazy-loading, use that; otherwise use src
+            const src = (img.getAttribute("data-src") || img.src || "").trim();
+            if (!src) return;
+
+            // kick off download/cache
+            const preloader = new Image();
+            preloader.src = src;
+
+            // ensure eager loading even if lazy was set
+            img.setAttribute("loading", "eager");
+        });
+    }, []);
+
     return (
         <>
             <div className="content-container" style={containerStyle}>
@@ -92,6 +113,7 @@ function App() {
                 </div>
                 <Nav />
                 <Hero />
+                <AboutMeMobile />
                 <AboutMe />
                 <Helpgebieden />
                 <Ondersteuningsvormen />

@@ -13,11 +13,11 @@ import send from './../img/send.png';
 const questions = [
     {
         question: "Hoe weet ik of uw aanpak past bij de behoeften van mijn kind of cliënt?",
-        answer: "Mijn aanpak is afgestemd op individuele behoeften via een intake en observatieproces..."
+        answer: "Mijn aanpak is afgestemd op individuele behoeften via een intake en observatieproces."
     },
     {
         question: "Wat is het verschil tussen uw psycho-educatie en reguliere voorlichting over autisme?",
-        answer: "Psycho-educatie bij mij is ervaringsgericht en sensorisch afgestemd..."
+        answer: "Psycho-educatie bij mij is ervaringsgericht en sensorisch afgestemd."
     },
     {
         question: "Kunt u ook ondersteuning bieden als er nog geen officiële diagnose is?",
@@ -112,8 +112,8 @@ function FAQ() {
                             onClick={() => toggleAnswer(index)}
                         >
                             <div className="title">{item.question}</div>
-                            <div className="select" />
-                            <div className="var" />
+                            <div className="select"/>
+                            <div className="var"/>
                         </div>
 
                         <div className={`answer-wrapper ${openIndex === index ? 'open' : ''}`}>
@@ -125,20 +125,6 @@ function FAQ() {
 
             <div className="contact">
                 <div className="title fade-in">Kom in contact</div>
-                <div className="items-container fade-in">
-                    <div className="item">
-                        <img src={mail} alt="contact thingy" />
-                        <p>jdoeswijk@hotmail.com</p>
-                    </div>
-                    <div className="item">
-                        <img src={phone} alt="contact thingy" />
-                        <p>+31 06 12345678</p>
-                    </div>
-                    <div className="item">
-                        <img src={location} alt="contact thingy" />
-                        <p>Lisse, Bollenstreek</p>
-                    </div>
-                </div>
 
                 <div className="title title-form fade-in">Contactformulier</div>
 
@@ -148,7 +134,8 @@ function FAQ() {
                             <input type="text" placeholder="Volledige naam" name="name" required/>
                             <input type="tel" placeholder="Telefoonnummer" name="phone" required/>
                             <input type="email" placeholder="Email" name="email" required/>
-                            <input type="hidden" name="time" style={{display: "none"}} value={new Date().toLocaleString()}/>
+                            <input type="hidden" name="time" style={{display: "none"}}
+                                   value={new Date().toLocaleString()}/>
                         </div>
                         <div className="form-message">
                             <textarea
@@ -158,7 +145,7 @@ function FAQ() {
                                 onClick={handleTextareaClick}
                             ></textarea>
                             <button type="submit" className="send-btn">
-                                <img src={send} className="clickable" alt="Verstuur" />
+                                <img src={send} className="clickable" alt="Verstuur"/>
                             </button>
                         </div>
                     </form>
@@ -166,6 +153,25 @@ function FAQ() {
                         <div className="popup-send"></div>
                     )}
                 </div>
+
+                <div className="items-container fade-in">
+                    <div className="item">
+                        <img src={mail} alt="contact thingy"/>
+                        <p>jorit@authentisiteit.com</p>
+                    </div>
+                    <div className="item">
+                        <img src={phone} alt="contact thingy"/>
+                        <p>+31 06 28353794</p>
+                    </div>
+                    <div className="item">
+                        <img src={location} alt="contact thingy"/>
+                        <p>Lisse, Bollenstreek</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="creditsv2">
+                © 2025 Jorit Doeswijk. KVK: 97069280
             </div>
         </div>
     );

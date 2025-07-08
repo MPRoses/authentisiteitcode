@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './../css/Hero.css';
 import $ from 'jquery';
-import photo1 from './../img/photo1.jpg';
+import photo1 from './../img/photo1.webp';
 
 function Hero() {
     useEffect(() => {
@@ -16,7 +16,7 @@ function Hero() {
 
         // CTA: Meer over mij
         $('.hero-cta:contains("Meer over mij")').on('click', function () {
-            scrollToSection('.about-me', 0.15);
+            scrollToSection('.scrollaboutmehere', 0.15);
         });
 
         // CTA: Hoe ik help
@@ -52,7 +52,7 @@ function Hero() {
                 </div>
             </div>
             <div className="section-img fade-in">
-                <img src={photo1} alt="main cover" />
+                <img src={photo1} alt="main cover" loading="eager"/>
             </div>
         </div>
     );

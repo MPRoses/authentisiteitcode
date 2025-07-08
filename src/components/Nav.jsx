@@ -33,7 +33,7 @@ function Nav() {
         }
 
         $('.nav-item:contains("Over mij") .clickable').on('click', function () {
-            scrollToSection('.about-me', 0.15);
+            scrollToSection('.scrollaboutmehere', 0.15);
         });
 
         $('.nav-item:contains("Hoe ik help") > .clickable').on('click', function () {
@@ -60,21 +60,21 @@ function Nav() {
         $('.menu-item:contains("Over mij")').on('click', function () {
             setIsActive(false); // Close menu
             setTimeout(() => {
-                scrollToSection('.about-me', 0);
+                scrollToSection('.scrollaboutmehere', .15);
             }, 50);
         });
 
         $('.menu-item:contains("Hoe ik help")').on('click', function () {
             setIsActive(false); // Close menu
             setTimeout(() => {
-                scrollToSection('.helpgebieden', 0.03);
+                scrollToSection('.helpgebieden', 0.44);
             }, 50);
         });
 
         $('.menu-item:contains("Contact")').on('click', function () {
             setIsActive(false); // Close menu
             setTimeout(() => {
-                scrollToSection('.contact', 0.07);
+                scrollToSection('.contact', 0.10);
             }, 50);
         });
 
@@ -95,6 +95,11 @@ function Nav() {
     };
 
     const handleBurgerClick = () => {
+        if ($("body").hasClass("isInactive")) {
+            $("body").removeClass("isInactive");
+        } else {
+            $("body").addClass("isInactive");
+        }
         setIsActive(prevState => !prevState);
     };
 

@@ -3,7 +3,7 @@ import './../css/Hero.css';
 import './../css/Werkwijze.css';
 
 import stars from './../img/stars.svg';
-import img from './../img/werkwijze.png';
+import img from './../img/werkwijze.webp';
 
 
 function Werkwijze() {
@@ -27,10 +27,10 @@ function Werkwijze() {
             </div>
 
             <div className="section-img fade-in">
-                <img src={img} alt="main cover"/>
+                <img src={img} alt="main cover" loading="eager"/>
             </div>
 
-            <img src={stars} alt="stars" className="werkwijze-stars fade-in" />
+            <img src={stars} alt="stars" className="werkwijze-stars fade-in" loading="eager" />
             <div className="steps-container">
                 <div className="step-item fade-in">
                     <div className="title">

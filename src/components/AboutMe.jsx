@@ -1,24 +1,41 @@
-import React, {useState} from 'react';
+import React, { useEffect } from 'react';
 import './../css/Hero.css';
 import './../css/AboutMe.css';
 
-import photo2 from './../img/photo2.jpg';
-import photo3 from './../img/photo3.jpg';
-import photo4 from './../img/photo4.jpg';
-import photo8 from './../img/photo8.jpg';
-import photo9 from './../img/photo9.jpg';
-import photo10 from './../img/photo10.jpg';
+import $ from 'jquery';
+
+import photo2 from './../img/photo2.webp';
+import photo3 from './../img/photo3.webp';
+import photo4 from './../img/photo4.webp';
+import photo8 from './../img/photo8.webp';
+import photo9 from './../img/photo9.webp';
+import photo10 from './../img/photo10.webp';
 
 function AboutMe() {
+    useEffect(() => {
+        // Decode all images early to prevent scroll jank
+        const imageSources = [photo2, photo3, photo4, photo8, photo9, photo10];
 
-    const [showFullBio, setShowFullBio] = useState(false)
+        imageSources.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+            if (img.decode) {
+                img.decode().catch(() => {}); // decode asynchronously
+            }
+        });
 
-    const handleShowBio = () => setShowFullBio(true)
-    const handleHideBio = () => setShowFullBio(false)
+        $(".read-more").on("click", function () {
+            $(".about-me-mobile").css({
+                "display": "block",
+                "opacity": "1"
+            });
+            $("body, #root").css("overflow-y", "hidden");
+        });
+
+    }, []);
 
     return (
-        <div className="about-me section">
-
+        <div className="about-me scrollaboutmehere section">
             <div className="section-wrapper about-me-wrapper">
 
                 <h2 className="section-title about-me-title fade-in">
@@ -50,16 +67,6 @@ function AboutMe() {
                         <div className="read-more-btn btn clickable">
                             Lees Meer
                         </div>
-
-                        {showFullBio && (
-                            <div className="bio-overlay">
-                                <div className="close-btn clickable" onClick={handleHideBio}>×</div>
-                                <div className="bio-content">
-                                    {/* Content or images go here */}
-                                </div>
-                            </div>
-                        )}
-
                     </p>
 
                     <p className="full-bio">
@@ -73,7 +80,7 @@ function AboutMe() {
                     </p>
 
                     <p className="full-bio">
-                        In mijn werk als orthopedagoog is mij opgevallen dat de mensen met wie ik werk zeer veel moeite
+                        In mijn werk als Orthopedagoog is mij opgevallen dat de mensen met wie ik werk zeer veel moeite
                         hebben met het leven in een groep. Zij krijgen de gehele dag veel prikkels vanuit de omgeving. Van
                         mensen met een Autisme Spectrum Stoornis is bekend dat zij vaak problemen ervaren in het verwerken
                         van de vele prikkels die zij op een dag ervaren. Om meer kennis te krijgen over hoe zij hiermee om
@@ -83,7 +90,7 @@ function AboutMe() {
                     </p>
 
                     <p className="full-bio">
-                        In mijn werk als Orthopedagoog heb ik ervaren dat diagnostiek vaak onvolledig of verouderd is. Dit
+                        Bovendien heb ik ervaren dat diagnostiek vaak onvolledig of verouderd is. Dit
                         kan ervoor zorgen dat aansluiting bij de kern van de problemen niet altijd goed lukt. Daarnaast is
                         er onvoldoende aandacht voor uitleg wat de resultaten van de diagnostiek betekent voor iedereen die
                         ondersteuning moet bieden. Door goede uitleg te geven wat een diagnose betekent helpt dit voor
@@ -108,24 +115,23 @@ function AboutMe() {
                 </div>
             </div>
 
-            {/* Restored original image layout */}
             <div className="section-img img-class-3 img-top-right about-me-img fade-in">
-                <img src={photo2} alt="main cover" />
+                <img src={photo2} alt="main cover" loading="eager" />
             </div>
             <div className="section-img img-class-2 img-middle-right about-me-img fade-in">
-                <img src={photo3} alt="main cover" />
+                <img src={photo3} alt="main cover" loading="eager" />
             </div>
             <div className="section-img img-class-1 img-bottom-right about-me-img fade-in">
-                <img src={photo9} alt="main cover" />
+                <img src={photo9} alt="main cover" loading="eager" />
             </div>
             <div className="section-img img-class-3 img-bottom-left about-me-img fade-in">
-                <img src={photo4} alt="main cover" />
+                <img src={photo4} alt="main cover" loading="eager" />
             </div>
             <div className="section-img img-class-2 img-middle-left about-me-img fade-in">
-                <img src={photo10} alt="main cover" />
+                <img src={photo10} alt="main cover" loading="eager" />
             </div>
             <div className="section-img img-class-1 img-top-left about-me-img fade-in">
-                <img src={photo8} alt="main cover" />
+                <img src={photo8} alt="main cover" loading="eager" />
             </div>
         </div>
     );

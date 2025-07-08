@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import butter from './butter.js';
 
@@ -9,23 +8,34 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 butter.cleanup();
 
-if (window.innerWidth > 768) {
-    butter.init({
-        wrapperDamper: 0.04
+// Determine if mobile or desktop before importing App/AppMobile
+const isMobile = window.innerWidth <= 768;
+
+if (!isMobile) {
+    // Desktop
+    import('./App').then(({ default: App }) => {
+        butter.init({
+            wrapperDamper: 0.045
+        });
+
+        root.render(
+            <div>
+                <App />
+                <div className="credits">
+                    © 2025 Jorit Doeswijk. KVK: 97069280
+                </div>
+            </div>
+        );
+    });
+} else {
+    // Mobile
+    import('./AppMobile').then(({ default: AppMobile }) => {
+        root.render(
+            <React.StrictMode>
+                <AppMobile />
+            </React.StrictMode>
+        );
     });
 }
 
-
-root.render(
-    <React.StrictMode>
-        <App />
-        <div className="credits">
-            © 2025 Jorit Doeswijk. KVK: 97069280
-        </div>
-    </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

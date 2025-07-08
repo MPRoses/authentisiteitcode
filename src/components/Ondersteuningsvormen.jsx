@@ -2,9 +2,9 @@ import React from 'react';
 import './../css/Ondersteuningsvormen.css';
 import './../css/Hero.css';
 
-import img1 from './../img/img1.png';
-import img2 from './../img/img2.png';
-import img3 from './../img/img3.png';
+import img1 from './../img/img1.webp';
+import img2 from './../img/img2.webp';
+import img3 from './../img/img3.webp';
 
 function Ondersteuningsvormen() {
 
@@ -33,7 +33,7 @@ function Ondersteuningsvormen() {
                             persoonlijke
                             behoefte.
                             <br></br><br></br>
-                            Ik biedt interactieve workshops aan, maar ook meer educatie gericht op de onderliggende
+                            Ik bied interactieve workshops aan, maar ook meer educatie gericht op de onderliggende
                             theorieën van ontwikkeling, Autisme en Sensorische Informatieverwerking.
                             <br></br><br></br>
                             Een combinatie van theorie en ervaringsleren is ook mogelijk. Ik pas mij graag aan naar de
@@ -41,7 +41,7 @@ function Ondersteuningsvormen() {
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src={img1} alt="main cover"/>
+                        <img src={img1} alt="main cover" loading="eager"/>
                     </div>
                 </div>
                 <div className="wrapper-item fade-in">
@@ -58,7 +58,7 @@ function Ondersteuningsvormen() {
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src={img2} alt="main cover"/>
+                        <img src={img2} alt="main cover" loading="eager"/>
                     </div>
                 </div>
                 <div className="wrapper-item fade-in">
@@ -73,11 +73,11 @@ function Ondersteuningsvormen() {
                             Ik kan daarbij ondersteunen door het opstellen van een sensorisch profiel, Autisme onderzoek
                             of intelligentie onderzoek. Vanuit dit stukje diagnostiek kan ik verder in kaart brengen aan
                             welke ondersteuningsbehoefte op het gebied van Autisme, verstoorde prikkelverwerking of
-                            mogelijke verstandelijke beperking ik kan voldoen
+                            mogelijke verstandelijke beperking ik kan voldoen.
                         </div>
                     </div>
                     <div className="section-img">
-                        <img src={img3} alt="main cover"/>
+                        <img src={img3} alt="main cover" loading="eager"/>
                     </div>
                 </div>
 
