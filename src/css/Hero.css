@@ -6,8 +6,8 @@
   left: 0;
 }
 .section .section-img {
-  width: 30%;
-  height: 700px;
+  width: 630px;
+  height: 630px;
   max-width: 700px;
   background-color: #3198A5;
   position: absolute;
@@ -74,7 +74,8 @@
   .section .section-img {
     left: unset;
     right: 50px !important;
-    height: 530px;
+    height: 500px;
+    width: 33%;
     top: 210px;
   }
   .section .section-wrapper {

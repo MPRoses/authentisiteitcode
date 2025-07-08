@@ -57,17 +57,17 @@ html.isInactive, body.isInactive {
   flex-direction: column;
 }
 .mobile-container .item {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 .mobile-container .title1 {
   font-weight: 600;
   font-size: 24px;
-  margin-bottom: 5px;
+  margin-bottom: 7.5px;
 }
 .mobile-container .title2 {
   font-weight: 600;
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 7.5px;
 }
 .mobile-container .bio1 {
   font-size: 18px;
@@ -76,7 +76,7 @@ html.isInactive, body.isInactive {
   width: 100%;
   height: fit-content;
   background-color: #3198A5;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   border-radius: 40px;
   transform: translate(5px, 5px);
 }
@@ -89,7 +89,7 @@ html.isInactive, body.isInactive {
   height: 10px;
 }
 .mobile-container .spacer.init {
-  height: 75px !important;
+  height: 180px !important;
 }
 .mobile-container .spacer.big {
   height: 40px !important;

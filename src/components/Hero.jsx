@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './../css/Hero.css';
 import $ from 'jquery';
-import photo1 from './../img/photo1.webp';
+import photo12 from './../img/photo12.webp';
 
 function Hero() {
     useEffect(() => {
@@ -38,9 +38,7 @@ function Hero() {
                     en prikkelverwerking
                 </div>
                 <div className="section-bio">
-                    Ik ben Jorit Doeswijk, orthopedagoog gespecialiseerd in autisme en sensorische informatieverwerking.
-                    Vanuit de overtuiging dat ieder mens uniek is, bied ik ondersteuning op maat – met kennis,
-                    betrokkenheid en oog voor ieders eigenheid.
+                    Ik ben Jorit Doeswijk, NVO geregistreerd Orthopedagoog, SI (zintuiglijke informatieverwerking) consulent en autisme specialist.
                 </div>
                 <div className="hero-cta-container">
                     <div className="hero-cta clickable">
@@ -52,7 +50,7 @@ function Hero() {
                 </div>
             </div>
             <div className="section-img fade-in">
-                <img src={photo1} alt="main cover" loading="eager"/>
+                <img src={photo12} alt="main cover" loading="eager"/>
             </div>
         </div>
     );
