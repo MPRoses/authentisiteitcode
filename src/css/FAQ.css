@@ -52,6 +52,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-weight: 600;
+  max-width: 80% !important;
 }
 .FAQ .items-wrapper .item .select, .FAQ .items-wrapper .item .var {
   transition: transform 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89);
@@ -92,7 +93,7 @@
 }
 .FAQ .items-wrapper .answer-wrapper.open {
   padding: 15px 25px;
-  max-height: 300px;
+  max-height: 900px;
   opacity: 1;
 }
 .FAQ .contact {
@@ -326,7 +327,7 @@
     position: relative;
   }
   .FAQ .items-wrapper .item .title {
-    max-width: calc(100% - 90px);
+    max-width: 95% !important;
     white-space: normal;
     word-break: break-word;
     line-height: 1.3;

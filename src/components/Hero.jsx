@@ -38,7 +38,7 @@ function Hero() {
                     en prikkelverwerking
                 </div>
                 <div className="section-bio">
-                    Ik ben Jorit Doeswijk, NVO geregistreerd Orthopedagoog, SI (zintuiglijke informatieverwerking) consulent en autisme specialist.
+                    Ik ben Jorit Doeswijk, NVO geregistreerd Orthopedagoog, met als specialisme Sensorische Informatieverwerking (zintuiglijke informatieverwerking), autisme en verstandelijke beperking.
                 </div>
                 <div className="hero-cta-container">
                     <div className="hero-cta clickable">

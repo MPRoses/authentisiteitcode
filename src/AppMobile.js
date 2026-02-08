@@ -105,7 +105,7 @@ function AppMobile() {
                         en prikkelverwerking
                     </div>
                     <div className="bio1 item fade-in">
-                        Ik ben Jorit Doeswijk, NVO geregistreerd Orthopedagoog, SI (zintuiglijke informatieverwerking) consulent en autisme specialist.
+                        Ik ben Jorit Doeswijk, NVO geregistreerd Orthopedagoog, met als specialisme Sensorische Informatieverwerking (zintuiglijke informatieverwerking), autisme en verstandelijke beperking.
                     </div>
                     <div className="img item fade-in">
                         <img src={photo12} alt="headshot"/>

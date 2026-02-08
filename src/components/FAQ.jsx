@@ -12,28 +12,29 @@ import send from './../img/send.png';
 
 const questions = [
     {
-        question: "Hoe weet ik of uw aanpak past bij de behoeften van mijn kind of cliënt?",
-        answer: "Mijn aanpak is afgestemd op individuele behoeften via een intake en observatieproces."
-    },
-    {
-        question: "Wat is het verschil tussen uw psycho-educatie en reguliere voorlichting over autisme?",
-        answer: "Psycho-educatie bij mij is ervaringsgericht en sensorisch afgestemd."
+        question: "Wat is het verschil tussen uw psycho-educatie en reguliere voorlichting over autisme, sensorische informatieverwerking of verstandelijke beperking?",
+        answer: "Psycho-educatie is meer gericht op persoonsgebonden uitleg en ondersteuning terwijl reguliere voorlichting meer afgestemd is algemene kennis over Autisme, prikkelverwerking of gebieden van persoonlijke ontwikkeling zoals cognitieve, adaptieve, sociaal of emotionele ontwikkeling."
     },
     {
         question: "Kunt u ook ondersteuning bieden als er nog geen officiële diagnose is?",
-        answer: "Ja, ondersteuning kan ook preventief of tijdens onderzoek worden aangeboden."
+        answer: "Ja, ondersteuning kan ook preventief of tijdens onderzoek worden aangeboden, dit wordt echter niet vergoed vanuit de zorgverzekering, WMO of PGB. U kunt contact opnemen telefonisch via het formulier voor een intake of korte omschrijving van de klachten, waarna ik u kan helpen met het zoeken naar de mogelijkheden."
     },
     {
         question: "Hoe zorgt u ervoor dat scholing aansluit bij onze specifieke doelgroep of organisatie?",
-        answer: "Ik stem de inhoud af in overleg en werk met praktijkvoorbeelden."
+        answer: "Samen met u onderzoeken wij de hulpvraag van u of uw doelgroep, waarna we de inhoud afstemmen en in overleg werk en praktijkvoorbeelden behandelen. Voorafgaand maak ik graag kennis op de locatie om de doelgroep en de situatie te kunnen zien, zodat de scholing aansluit bij u en uw organisatie."
     },
     {
         question: "Wat kan ik verwachten van een ondersteuningsprofiel of sensorisch profiel?",
-        answer: "Een helder, visueel overzicht van sterktes, uitdagingen en praktische strategieën."
+        answer: "Bij een ondersteuningsprofiel onderzoeken we de aandachtsgebieden die ondersteuning behoeven om tot persoonlijke groei te kunnen komen. \n\n Een sensorisch profiel maakt een schets van de werking van de zintuigen. Is er sprake van onder- of overgevoeligheid en welk gedrag ziet u hierdoor terug."
     },
     {
-        question: "Kan ik uw begeleiding (deels) vergoed krijgen via de zorgverzekering of PGB?",
-        answer: "Ja, afhankelijk van indicatie of zorgprofiel zijn er vergoedingsmogelijkheden via PGB of aanvullende verzekering."
+        question: "Wordt ondersteuning bij Autisme vergoed door gemeente of zorgverzekeraars?",
+        answer: "Coaching bij autisme wordt niet vergoed door zorgverzekeraars, maar kan wel betaald worden vanuit de volgende regelingen: een Persoonsgebonden Budget (PGB), de Wet maatschappelijke ondersteuning (Wmo), of de Jeugdwet (voor jongeren).Ook de Werkgever of de arbodienst kan een rol spelen in de financiering via de Wet verbetering poortwachter. Informeer bij de gemeente, het zorgkantoor, je werkgever, of bij de autismecoach zelf naar de specifieke mogelijkheden en de aanvraagprocedures. \n \n Mogelijkheden voor vergoeding: \n \n Persoonsgebonden Budget (PGB):\n Dit is een budget dat je kunt aanvragen om zelf je zorg en begeleiding te organiseren, inclusief coaching.\n \n Wmo (Wet maatschappelijke ondersteuning):\n Voor volwassenen met autisme kan levensloopbegeleiding of een andere vorm van ondersteuning betaald worden vanuit de Wmo. \n \n Jeugdwet: \nVoor jongeren met autisme kan coaching vergoed worden vanuit de Jeugdwet, dit gaat via de gemeente. \n \n Werkgever/Arbodienst: \n Als de coaching gerelateerd is aan werk, bijvoorbeeld re-integratie, kan de werkgever of de arbodienst de kosten vergoeden.\n" +
+            "Stappen om de mogelijkheden te verkennen:\n 1.Neem contact op met je gemeente: \n Vraag naar de mogelijkheden voor een PGB, Wmo-ondersteuning, of vergoeding via de Jeugdwet. \n 2.Bespreek dit met je werkgever:\n Als de coaching een relatie heeft met werk, vraag naar de mogelijkheden voor vergoeding via de werkgever of arbodienst. \n 3.Overleg met de autismecoach: \n Zij kunnen je informeren over hoe zij dergelijke trajecten in het verleden hebben gefinancierd en je eventueel helpen bij het aanvraagproces."
+    },
+    {
+        question: "Is er een wachtlijst en hoe lang duurt het voordat mijn aanmelding in behandeling wordt genomen?",
+        answer: "Authentisiteit heeft momenteel nog geen wachtlijst. Na aanmelding wordt er contact met u opgenomen voor een intake gesprek, om te onderzoeken welke ondersteunen voor u passend is."
     }
 ];
 
@@ -117,7 +118,12 @@ function FAQ() {
                         </div>
 
                         <div className={`answer-wrapper ${openIndex === index ? 'open' : ''}`}>
-                            {item.answer}
+                            {item.answer.split("\n").map((line, i) => (
+                                <React.Fragment key={i}>
+                                    {line}
+                                    <br />
+                                </React.Fragment>
+                            ))}
                         </div>
                     </div>
                 ))}
