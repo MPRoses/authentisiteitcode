@@ -1,9 +1,9 @@
 import React from 'react';
-import './../css/Preloader.css';
+import './../css/Preloader.sass';
 
-function Preloader() {
+function Preloader({ isActive = true }) {
     return (
-        <div className="preloader active">
+        <div className={`preloader${isActive ? ' active' : ''}`}>
             <div className="loader">
                 <div>
 

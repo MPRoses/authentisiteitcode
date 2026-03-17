@@ -1,13 +1,17 @@
 .nav {
   width: 100%;
   height: 120px;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   background-color: white;
   top: 0;
-  left: -30px;
-  transition: height 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), border-bottom 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  transition: height 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), border-bottom 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), transform 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
   border-bottom: 0.06rem solid white;
+}
+.nav a {
+  text-decoration: none;
+  color: #18232c;
+  cursor: pointer;
 }
 .nav .nav-logo {
   position: absolute;
@@ -42,6 +46,15 @@
   border-radius: 40px;
   font-size: 1rem;
 }
+.nav .nav-wrapper .nav-item a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: background-color 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), color 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), transform 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+}
+.nav .nav-wrapper .nav-item a.active {
+  background-color: rgba(49, 152, 165, 0.14);
+  color: #3198A5;
+}
 .nav .nav-wrapper .nav-item span img {
   position: relative;
   width: 0.46rem;
@@ -75,7 +88,7 @@
 .nav .nav-wrapper .nav-item .nav-dropdown .dropdown-item:nth-child(2) {
   font-size: 0.72rem;
 }
-.nav .nav-wrapper .nav-item:nth-child(3) {
+.nav .nav-wrapper .nav-item:nth-child(4) {
   background-color: #3198A5;
   color: white;
 }
@@ -191,6 +204,13 @@
   border-radius: 25px;
   pointer-events: none;
   margin-bottom: 5px;
+}
+.nav .menu .items-container .menu-item a {
+  color: white;
+  text-decoration: none;
+}
+.nav .menu .items-container .menu-item a:visited, .nav .menu .items-container .menu-item a:hover, .nav .menu .items-container .menu-item a:active {
+  color: white;
 }
 .nav .menu .items-container .menu-item:nth-child(3) {
   margin: 0;

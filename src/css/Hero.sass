@@ -1,22 +1,16 @@
 $dark: #002D3C
 $accent: #3198A5
-$tablet: 1024px
-$phone: 600px
-.section
-  width: 100%
-  height: 100vh
-  position: absolute
-  top: 0
-  left: 0
+
+.hero
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 2rem
   .section-img
-    width: 630px
-    height: 630px
-    max-width: 700px
+    width: clamp(400px, 35vw, 580px)
+    aspect-ratio: 580 / 571
     background-color: $accent
-    position: absolute
     z-index: 3
-    left: 1050px
-    top: 170px
     border-radius: 40px
     transform: scale(0.9)
     transition: transform 1.3s cubic-bezier(.18,.7,.34,.89), opacity 2s cubic-bezier(.18,.7,.34,.89)
@@ -31,11 +25,9 @@ $phone: 600px
       will-change: width
       transition: width 1.3s cubic-bezier(.18,.7,.34,.89), height 1.3s cubic-bezier(.18,.7,.34,.89)
   .section-wrapper
-    left: 200px
-    top: 300px
-    width: 750px
-    height: 400px
-    position: absolute
+    width: clamp(320px, 50vw, 730px)
+    min-height: 400px
+    position: relative
     color: $dark
     font-family: "Inter", sans-serif
     .section-title
@@ -66,76 +58,58 @@ $phone: 600px
         justify-content: center
         display: flex
         margin-right: 40px
-  @media screen and (max-width: 1550px)
-    .section-img
-      left: unset
-      right: 50px !important
-      height: 500px
-      width: 33%
-      top: 210px
+
+@media (max-width: 1100px)
+  .hero
+    flex-direction: column
+    text-align: center
+    padding-top: 50px
+    align-items: center
+
     .section-wrapper
-      width: 570px
-      left: 100px
+      width: 90%
+      margin: 0 auto
+      padding: 40px 5%
+      box-sizing: border-box
+      min-height: auto
+
       .section-title
-        font-size: 2.8rem
+        font-size: clamp(2rem, 6vw, 3rem)
+        line-height: 1.1
+
       .section-bio
-        font-size: 1rem
-  @media screen and (max-width: 1100px)
-    .section-img
-      left: unset
-      right: 50px !important
-      height: 400px
-      top: 230px
-    .section-wrapper
-      width: 410px
-      left: 60px
-      .section-title
-        font-size: 2rem
-      .section-bio
-        font-size: .9rem
-  @media screen and (max-width: 767px)
-    .section-img
-      left: 10%
-      width: 82%
-      margin-top: 43px
-      height: 500px
-      top: 400px
-      position: relative
-    .section-wrapper
-      width: calc(85% - 20px)
-      left: 50%
-      top: 160px
-      transform: translateX(-50%)
-      .section-title
-        font-size: 1.7rem
-        text-align: left
-      .section-bio
-        font-size: 1.3rem
-        text-align: left
-      .hero-cta-container .hero-cta
+        width: calc(100% - 20px)
+
+      .hero-cta-container
         display: none
-        font-size: 1rem !important
-  @media screen and (max-width: 430px)
+
     .section-img
-      left: 10%
-      width: 82%
-      margin-top: 43px
-      height: 430px
-      top: 440px
+      width: clamp(260px, 90%, 420px)
+      margin: 0 auto
+      left: 7.5px
       position: relative
+
+
+@media (max-width: 500px)
+  .hero
+    padding-top: 40px
     .section-wrapper
-      width: calc(85% - 20px)
-      left: 50%
-      top: 160px
-      transform: translateX(-50%)
       .section-title
-        font-size: 1.4rem
-        text-align: left
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem)
+
       .section-bio
-        font-size: 1.3rem
-        text-align: left
-      .hero-cta-container .hero-cta
-        font-size: .7rem !important
-  @media screen and (max-width: 385px)
-    .section-img
-      top: 550px
+        font-size: clamp(1rem, 3.8vw, 1.1rem)
+        width: calc(100% - 20px)
+
+
+
+@media (max-width: 410px)
+  .hero
+    padding-top: 35px
+    .section-wrapper
+      .section-title
+        font-size: clamp(1.5rem, 5vw, 2rem)
+
+      .section-bio
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem)
+        width: calc(100% - 20px)

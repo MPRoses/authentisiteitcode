@@ -1,7 +1,45 @@
+html {
+  overflow-y: auto;
+}
+
+body,
+#root {
+  overflow-y: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 .fade-in {
   opacity: 0;
-  transition: opacity 2s cubic-bezier(0.18, 0.7, 0.34, 0.89) 1s;
+  transition: opacity 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), transform 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
   will-change: opacity, transform;
+  transform: scale(1) translateY(50px);
+}
+.fade-in.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.scroll-reveal-section {
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+  top: 0;
+  left: 0;
 }
 
 .content-container {
@@ -11,127 +49,53 @@
   background-color: white;
   top: 0;
   left: 0;
+  width: 100%;
   box-shadow: -10px 0 15px -5px rgba(0, 45, 60, 0.7), 10px 0 15px -5px rgba(0, 45, 60, 0.7);
 }
 
-.content-container, body, #root {
-  height: 7420px;
-  transition: height 0.3s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+.content-container {
+  height: fit-content;
+  overflow-x: hidden;
 }
-@media screen and (max-width: 1560px) {
-  .content-container, body, #root {
-    height: 8020px;
-    transition: none !important;
-  }
+
+.home-hoeikhelp-cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 100px 0;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
-@media screen and (max-width: 1400px) {
-  .content-container, body, #root {
-    height: 7420px;
-  }
+
+.home-hoeikhelp-link {
+  min-width: 240px;
+  height: 60px;
+  padding: 0 28px;
+  border-radius: 40px;
+  border: 1px solid #002D3C;
+  color: #002D3C;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: transparent;
 }
-@media screen and (max-width: 1150px) {
-  .content-container, body, #root {
-    height: 7520px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .content-container, body, #root {
-    height: 7220px;
-  }
-}
-@media screen and (max-width: 900px) {
-  .content-container, body, #root {
-    height: 7420px;
-  }
-}
-@media screen and (max-width: 850px) {
-  .content-container, body, #root {
-    height: 7720px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .content-container, body, #root {
-    height: 7400px;
-  }
-}
-@media screen and (max-width: 740px) {
-  .content-container, body, #root {
-    height: 7500px;
-  }
-}
-@media screen and (max-width: 660px) {
-  .content-container, body, #root {
-    height: 7800px;
-  }
-}
+
 @media screen and (max-width: 640px) {
-  .content-container, body, #root {
-    height: 7900px;
+  .home-hoeikhelp-cta {
+    padding: 0 5%;
+  }
+  .home-hoeikhelp-link {
+    width: 100%;
   }
 }
-@media screen and (max-width: 610px) {
-  .content-container, body, #root {
-    height: 8000px;
-  }
-}
-@media screen and (max-width: 596px) {
-  .content-container, body, #root {
-    height: 8100px;
-  }
-}
-@media screen and (max-width: 571px) {
-  .content-container, body, #root {
-    height: 8350px;
-  }
-}
-@media screen and (max-width: 544px) {
-  .content-container, body, #root {
-    height: 8550px;
-  }
-}
-@media screen and (max-width: 523px) {
-  .content-container, body, #root {
-    height: 8750px;
-  }
-}
-@media screen and (max-width: 486px) {
-  .content-container, body, #root {
-    height: 8900px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .content-container, body, #root {
-    height: 9200px;
-  }
-}
-@media screen and (max-width: 439px) {
-  .content-container, body, #root {
-    height: 9300px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .content-container, body, #root {
-    height: 9700px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .content-container, body, #root {
-    height: 9900px;
-  }
-}
-@media screen and (max-width: 369px) {
-  .content-container, body, #root {
-    height: 10000px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .content-container, body, #root {
-    height: 10200px;
-  }
-}
-@media screen and (max-width: 300px) {
-  .content-container, body, #root {
-    height: 10400px;
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 

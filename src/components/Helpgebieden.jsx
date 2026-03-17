@@ -10,17 +10,17 @@ import achterstand from './../img/achterstand.png';
 function Helpgebieden() {
 
     return (
-        <div className="helpgebieden section">
+        <div className="helpgebieden section fade-in">
             <div className="section-wrapper">
                 <div className="section-title">
                     Ik kijk graag naar wat wél werkt
                 </div>
                 <div className="section-bio">
-                    Iedere persoon met autisme of een verstandelijke beperking is uniek. Ik help u inzicht krijgen in gedrag, prikkelverwerking en ondersteuningsbehoeften – zodat u, uw kind of cliënt meer rust en balans kan ervaren in het dagelijks leven.
+                    Iedere persoon met autisme of een verstandelijke beperking is uniek. Ik help u inzicht krijgen in gedrag, prikkelverwerking en ondersteuningsbehoeften zodat u, uw kind of cliënt meer rust en balans kan ervaren in het dagelijks leven.
                 </div>
             </div>
             <div className="items-wrapper">
-                <div className="item fade-in">
+                <div className="item ">
                     <div className="item-content">
                         <img src={autisme} alt="autisme" loading="eager"/>
                         <div className="title">
@@ -35,7 +35,7 @@ function Helpgebieden() {
                         </div>
                     </div>
                 </div>
-                <div className="item fade-in">
+                <div className="item ">
                     <div className="item-content">
                         <img src={SI} alt="waves" loading="eager"/>
                         <div className="title">
@@ -50,7 +50,7 @@ function Helpgebieden() {
                         </div>
                     </div>
                 </div>
-                <div className="item fade-in">
+                <div className="item ">
                     <div className="item-content">
                         <img src={achterstand} alt="achterstand" loading="eager"/>
                         <div className="title">

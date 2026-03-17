@@ -26,6 +26,8 @@
     display: flex
     justify-content: space-between
     align-items: center
+    opacity: 0
+    transition: opacity .6s cubic-bezier(.18, .7, .34, .89)
 
     div
       width: 10px
@@ -47,3 +49,6 @@
     opacity: 1
     filter: blur(0px)
     pointer-events: all
+
+    .loader
+      opacity: 1

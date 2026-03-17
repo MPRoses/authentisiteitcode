@@ -1,0 +1,210 @@
+.blog
+  width: 100%
+  min-height: auto
+  position: relative
+  padding: 145px 0 150px
+  color: #002D3C
+  font-family: "Inter", sans-serif
+
+  .blog-container
+    width: min(100%, 1240px)
+    margin: 50px auto
+    padding: 0 20px
+    box-sizing: border-box
+
+  .blog-intro
+    display: grid
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 500px)
+    gap: 34px
+    align-items: center
+
+  .blog-eyebrow
+    margin-bottom: 14px
+    font-size: .82rem
+    font-weight: 700
+    letter-spacing: .18em
+    text-transform: uppercase
+    color: #3198A5
+
+  .blog-intro-copy
+    .section-title
+      font-size: clamp(2.4rem, 4.3vw, 3.9rem)
+      line-height: 1.06
+      font-weight: 700
+      text-align: left
+
+    .section-bio
+      margin-top: 18px
+      font-size: clamp(1rem, 1.3vw, 1.15rem)
+      line-height: 1.6
+      max-width: 760px
+
+  .blog-intro-actions
+    margin-top: 28px
+
+  .blog-intro-link,
+  .blog-intro-link:visited,
+  .blog-intro-link:hover,
+  .blog-intro-link:active
+    min-width: 220px
+    height: 60px
+    padding: 0 28px
+    border-radius: 40px
+    border: 1px solid #002D3C
+    color: #002D3C
+    text-decoration: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+
+  .blog-intro-featured
+    background: linear-gradient(180deg, #F4F4F4 0%, #EEF6F7 100%)
+    border-radius: 32px
+    padding: 20px
+    text-decoration: none
+    color: #002D3C
+
+    &:hover
+      .blog-intro-image
+        transform: scale(1.05)
+
+  .blog-intro-image
+    position: relative
+    aspect-ratio: 16 / 10
+    border-radius: 24px
+    background-color: #3198A5
+    transition: transform .63s cubic-bezier(.18, .7, .34, .89)
+
+    img
+      position: absolute
+      width: calc(100% - 5px)
+      height: calc(100% - 5px)
+      top: -10px
+      left: -10px
+      border-radius: 24px
+      object-fit: cover
+
+  .blog-intro-featured-content
+    padding: 22px 10px 8px
+
+    h2
+      margin: 10px 0 8px
+      font-size: clamp(1.45rem, 2vw, 1.9rem)
+      line-height: 1.25
+
+    p
+      margin: 0
+      font-size: 1rem
+      line-height: 1.6
+
+  .blog-intro-meta
+    color: #456272
+    font-size: .82rem
+    font-weight: 600
+
+  .blog-header
+    width: min(100%, 900px)
+    margin-top: 260px
+
+    .section-title
+      font-size: clamp(2rem, 3.4vw, 2.9rem)
+      line-height: 1.1
+      font-weight: 700
+      text-align: left
+
+  .blog-grid
+    margin-top: 32px
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 32px
+
+  .blog-card
+    background-color: #F4F4F4
+    border-radius: 26px
+    padding: 18px
+    display: flex
+    flex-direction: column
+    text-decoration: none
+    color: #002D3C
+    cursor: pointer
+
+    .card-image
+      border-radius: 18px
+      background-color: #3198A5
+      aspect-ratio: 16 / 11
+      position: relative
+      transition: transform .63s cubic-bezier(.18, .7, .34, .89)
+
+      img
+        position: absolute
+        width: calc(100% - 5px)
+        height: calc(100% - 5px)
+        top: -10px
+        left: -10px
+        border-radius: 18px
+        object-fit: cover
+
+    .card-content
+      padding: 18px 10px 10px
+
+      .card-meta
+        display: flex
+        justify-content: space-between
+        gap: 10px
+        flex-wrap: wrap
+        font-size: .8rem
+        line-height: 1.3
+        color: #456272
+        font-weight: 600
+
+      h3
+        margin-top: 10px
+        font-size: clamp(1.35rem, 1.8vw, 1.7rem)
+        line-height: 1.3
+        font-weight: 700
+
+      p
+        margin-top: 8px
+        font-size: 1.04rem
+        line-height: 1.55
+
+    &:hover
+      .card-image
+        transform: scale(1.05)
+
+  @media screen and (max-width: 980px)
+    padding: 120px 0 100px
+
+    .blog-container
+      padding: 0 5%
+
+    .blog-intro
+      grid-template-columns: 1fr
+
+  @media screen and (max-width: 780px)
+    .blog-header
+      margin-top: 40px
+
+    .blog-grid
+      grid-template-columns: 1fr
+      gap: 18px
+
+    .blog-card
+      padding: 12px
+
+  @media screen and (max-width: 640px)
+    .blog-intro-actions
+      display: none
+
+    .blog-intro-featured
+      display: none
+
+    .blog-header
+      display: none
+
+    .blog-intro-link,
+    .blog-intro-link:visited,
+    .blog-intro-link:hover,
+    .blog-intro-link:active
+      width: 100%

@@ -1,200 +1,192 @@
-.about-close
-  position: sticky
-  top: 3rem
-  left: calc(97.5% - 40px)
-  width: 40px
-  z-index: 10000
-  .icn
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    height: 100%
-    width: 100%
-    span
-      background-color: #002D3C
-      height: 2px
-      width: 30px
-      position: absolute
-      transition: transform 0.63s cubic-bezier(.18, .7, .34, .89), opacity 0.63s
-      &:nth-child(1)
-        transform: rotate(45deg)
-      &:nth-child(2)
-        opacity: 0
-      &:nth-child(3)
-        transform: rotate(-45deg)
-
-.about-me-mobile
-  width: 100vw !important
-  height: 100vh !important
-  position: absolute
-  top: 0 !important
-  left: 0 !important
-  display: none
-  overflow-y: auto
-  opacity: 0
-  z-index: 1232131231
-  background-color: #f8faff
-  overflow-x: hidden
-  transition: opacity .63s cubic-bezier(.18, .7, .34, .89)
-  margin-bottom: 60px
-  color: #002D3C
-  .section-wrapper
-    position: relative
-    left: 5% !important
-    top: 30px !important
-    padding-bottom: 20px
-  .section-img
-    position: relative !important
-    width: 100% !important
-    display: flex !important
-    align-items: center
-    justify-content: center
-    height: 300px !important
-    padding-bottom: 15px
-    img
-      width: 100%
-      position: relative
-      height: 100%
-  .photo-10
-    height: 400px !important
+$seperation: 10px
 
 .about-me
   width: 100%
-  height: 1300px
-  position: absolute
-  top: 950px
+  min-height: auto
+  position: relative
+  top: 0
   left: 0
-  .section-wrapper
-    top: 0
+  padding: 180px 0 100px
+  overflow-y: hidden
+
+  .about-me-container
+    width: 100%
+    max-width: 1480px
+    margin: 0 auto
+    padding: 0 clamp(24px, 0vw, 56px)
+    position: relative
+    box-sizing: border-box
+
+  .about-me-wrapper
+    position: relative
+    width: min(100%, 900px)
+    z-index: 2
+
     .section-title
-      font-size: 2.5rem
+      font-size: clamp(2.1rem, 3vw, 2.6rem)
+      line-height: 1.1
+      margin-left: -10px
+      color: #002D3C
+      font-family: "Inter", sans-serif
+
     .section-bio
-      font-size: 1.32rem
-      width: 40vw
-      max-width: 762px
+      width: 100%
+      max-width: 700px
+      font-size: clamp(1.02rem, 1.2vw, 1.2rem)
+      line-height: 1.62
+      padding-top: 20px
+
+      p
+        margin: 0 0 20px
+        color: #002D3C
+        font-family: "Inter", sans-serif
+
       .read-more
         display: none
+        margin-bottom: 20px
+
+        p
+          margin-bottom: 14px
+
         .read-more-btn
           width: 120px
+          height: 45px
           background-color: #002D3C
           border-radius: 15px
           color: white
           display: flex
           align-items: center
           justify-content: center
-          height: 45px
-          left: 0
-          bottom: -20px
-          position: relative
-          z-index: 600
-          margin-left: 0
-        .bio-overlay
-          position: fixed
-          top: 0
-          left: 0
-          width: 100vw
-          height: 100vh
-          background: black
-          color: white
-          z-index: 9999
-          padding: 2rem 1.2rem
-          overflow-y: auto
-          display: flex
-          flex-direction: column
-
-          .close-btn
-            position: fixed
-            top: 1rem
-            right: 1rem
-            font-size: 2rem
-            color: white
-            z-index: 10000
-
-          .bio-content
-            margin-top: 3rem
-            font-size: 1.05rem
-            line-height: 1.6
-
-            p
-              margin-bottom: 1.2rem
 
       .full-bio
         display: block
-      p
-        margin-bottom: 20px
-  .section-img
+
+  .about-me-gallery
     position: absolute
-    left: unset
+    top: 60px
+    right: clamp(0px, 1.2vw, 24px)
+    width: min(44vw, 70px)
+    min-height: 1360px
+    pointer-events: none
+
+    .section-img
+      position: absolute
+      left: auto
+      background-color: #3198A5
+      z-index: 3
+      border-radius: 28px
+      transform: scale(0.9)
+      transition: transform 1.3s cubic-bezier(.18,.7,.34,.89), opacity 2s cubic-bezier(.18,.7,.34,.89)
+      backface-visibility: hidden
+      transform-style: preserve-3d
+
+      img
+        width: calc(100% - 5px)
+        height: calc(100% - 5px)
+        top: -15px
+        background-color: #F4F4F4
+        position: absolute
+        left: -15px
+        border-radius: 28px
+        will-change: width
+        transition: width 1.3s cubic-bezier(.18,.7,.34,.89), height 1.3s cubic-bezier(.18,.7,.34,.89)
+        object-fit: cover
+        backface-visibility: hidden
+        transform: translateZ(0)
+
   .img-class-1
-    width: 200px
-    height: 300px
+    width: 180px
+    height: 250px
+
   .img-class-2
     width: 300px
     height: 550px
+
   .img-class-3
-    width: 450px
-    height: 700px
+    width: 380px
+    height: 555px
+
   .img-top-right
     top: 0
-    right: 50px
-  .img-middle-right
-    top: calc(10px + 650px)
-    right: 57px
-  .img-bottom-right
-    top: calc(18px + 650px + 520px)
-    right: 151px
-  .img-top-left
-    top: 18px
-    right: 490px
-  .img-middle-left
-    top: calc(7px + 290px)
-    right: 485px
-  .img-bottom-left
-    top: 805px
-    right: 343px
-  @media screen and (max-width: 1700px)
-    .img-top-right
-      top: 0
-      right: 50px
-    .img-middle-right
-      top: calc(10px + 650px)
-      right: 57px
-    .img-bottom-right
-      top: calc(18px + 650px + 520px)
-      right: 62px
-    .img-top-left
-      top: 675px
-      right: 358px
-      display: none
-    .img-middle-left
-      top: calc(7px + 290px)
-      right: 485px
-      display: none
-    .img-bottom-left
-      top: 805px
-      right: 343px
-      display: none
-  @media screen and (max-width: 1500px)
-    .section-wrapper
-      .section-bio
-        font-size: 1.1rem !important
-  @media screen and (max-width: 1300px)
-    .section-wrapper
-      .section-bio
-        font-size: .97rem !important
-  @media screen and (max-width: 1000px)
-    .section-img
-      display: none
-    .section-wrapper
-      .section-bio
-        width: 80vw !important
-        max-width: 1300px !important
-  @media screen and (max-width: 767px)
-    .section-wrapper
-      top: 90px
-    .read-more
-      display: block !important
-    .full-bio
-      display: none !important
+    right: 15px
 
+  .img-middle-right
+    top: calc(513px + $seperation)
+    right: 19px
+
+  .img-bottom-right
+    top: calc(1046px + $seperation)
+    right: 133px
+
+  .img-top-left
+    top: 15px
+    right: calc(380px + $seperation)
+
+  .img-middle-left
+    top: calc(238px + $seperation)
+    right: calc(374px + $seperation)
+
+  .img-bottom-left
+    top: calc(756px + $seperation)
+    right: 308px
+
+  @media screen and (max-width: 1500px)
+    .about-me-container
+      padding-left: clamp(90px, 5vw, 84px)
+      padding-right: clamp(20px, 2.5vw, 40px)
+
+    .about-me-wrapper
+      width: min(100%, 680px)
+
+    .about-me-gallery
+      width: min(40vw, 500px)
+      right: 8px
+
+    .img-top-right,
+    .img-middle-right,
+    .img-bottom-right
+      display: none
+
+    .img-top-left
+      top: 0
+      right: 57px
+
+    .img-middle-left
+      top: calc(222px + $seperation)
+      right: 50px
+
+    .img-bottom-left
+      top: calc(741px + $seperation)
+      right: 47px
+
+  @media screen and (max-width: 1500px) and (min-width: 1251px)
+    .about-me-container
+      min-height: 1420px
+
+  @media screen and (max-width: 1250px)
+    padding-top: 160px
+
+    .about-me-wrapper
+      width: min(100%, 620px)
+
+    .about-me-gallery
+      width: min(36vw, 440px)
+
+.about-me.about-me-preview
+  min-height: auto
+  padding-top: 80px
+  padding-bottom: 40px
+
+.about-me .about-me-read-more
+  width: 200px
+  height: 60px
+  position: relative
+  border-radius: 40px
+  border: 0.1vw solid #002D3C
+  font-size: 1.2rem
+  align-items: center
+  justify-content: center
+  display: flex
+  margin-right: 40px
+  color: #002D3C
+  text-decoration: none

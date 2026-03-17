@@ -44,20 +44,7 @@ function FAQ() {
     const formRef = useRef(null);
 
     const toggleAnswer = (index) => {
-        setOpenIndex(prev => {
-            const newIndex = prev === index ? null : index;
-            const rootElement = document.getElementById('root');
-            const contentContainer = document.querySelector('.content-container');
-
-            if (newIndex !== null) {
-                if (rootElement) rootElement.style.height = `${rootElement.offsetHeight + 50}px`;
-                if (contentContainer) contentContainer.style.height = `${contentContainer.offsetHeight + 50}px`;
-            } else {
-                if (rootElement) rootElement.style.height = `${rootElement.offsetHeight - 50}px`;
-                if (contentContainer) contentContainer.style.height = `${contentContainer.offsetHeight - 50}px`;
-            }
-            return newIndex;
-        });
+        setOpenIndex(prev => (prev === index ? null : index));
     };
 
     const handleTextareaClick = () => {
@@ -101,40 +88,42 @@ function FAQ() {
 
     return (
         <div className="FAQ section">
-            <div className="section-wrapper fade-in">
-                <div className="section-title">FAQ</div>
+            <div className="fade-in">
+                <div className="section-wrapper ">
+                    <div className="section-title">FAQ</div>
+                </div>
+
+                <div className="items-wrapper">
+                    {questions.map((item, index) => (
+                        <div className="faq-block " key={index}>
+                            <div
+                                className={`item clickable ${openIndex === index ? 'active' : ''}`}
+                                onClick={() => toggleAnswer(index)}
+                            >
+                                <div className="title">{item.question}</div>
+                                <div className="select"/>
+                                <div className="var"/>
+                            </div>
+
+                            <div className={`answer-wrapper ${openIndex === index ? 'open' : ''}`}>
+                                {item.answer.split("\n").map((line, i) => (
+                                    <React.Fragment key={i}>
+                                        {line}
+                                        <br />
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <div className="items-wrapper">
-                {questions.map((item, index) => (
-                    <div className="faq-block fade-in" key={index}>
-                        <div
-                            className={`item clickable ${openIndex === index ? 'active' : ''}`}
-                            onClick={() => toggleAnswer(index)}
-                        >
-                            <div className="title">{item.question}</div>
-                            <div className="select"/>
-                            <div className="var"/>
-                        </div>
+            <div id="contact" className="contact">
+                <div className="title ">Kom in contact</div>
 
-                        <div className={`answer-wrapper ${openIndex === index ? 'open' : ''}`}>
-                            {item.answer.split("\n").map((line, i) => (
-                                <React.Fragment key={i}>
-                                    {line}
-                                    <br />
-                                </React.Fragment>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
+                <div className="title title-form ">Contactformulier</div>
 
-            <div className="contact">
-                <div className="title fade-in">Kom in contact</div>
-
-                <div className="title title-form fade-in">Contactformulier</div>
-
-                <div className="contact-form fade-in">
+                <div className="contact-form ">
                     <form className="form" onSubmit={handleFormSubmit} ref={formRef}>
                         <div className="form-row">
                             <input type="text" placeholder="Volledige naam" name="name" required/>
@@ -160,7 +149,7 @@ function FAQ() {
                     )}
                 </div>
 
-                <div className="items-container fade-in">
+                <div className="items-container ">
                     <div className="item">
                         <img src={mail} alt="contact thingy"/>
                         <p>jorit@authentisiteit.com</p>

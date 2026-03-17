@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 import './../css/Nav.css';
 import logo from './../img/logo.svg';
-import dropdown from './../img/dropdown.svg';
 
 function Nav() {
     const [isActive, setIsActive] = useState(false);
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         let lastScrollTop = 0;
@@ -15,124 +17,122 @@ function Nav() {
 
             if (currentScroll > lastScrollTop) {
                 $('.nav').addClass('nav-semi');
-            } else {
-                if (currentScroll < window.innerHeight * 0.75) {
-                    $('.nav').removeClass('nav-semi');
-                }
+            } else if (currentScroll < window.innerHeight * 0.75) {
+                $('.nav').removeClass('nav-semi');
             }
 
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
 
-        function scrollToSection(selector, offsetMultiplier = 0.15) {
-            const target = $(selector);
-            if (target.length) {
-                const offset = target.offset().top - ($(window).height() * offsetMultiplier);
-                $('html, body').animate({ scrollTop: offset }, 600);
-            }
-        }
-
-        $('.nav-item:contains("Over mij") .clickable').on('click', function () {
-            scrollToSection('.scrollaboutmehere', 0.15);
-        });
-
-        $('.nav-item:contains("Hoe ik help") > .clickable').on('click', function () {
-            scrollToSection('.helpgebieden', 0.03);
-        });
-
-        $('.nav-item:contains("Contact")').on('click', function () {
-            scrollToSection('.contact', 0.03);
-        });
-
-        $('.dropdown-item:contains("Helpgebieden")').on('click', function () {
-            scrollToSection('.helpgebieden', 0.03);
-        });
-
-        $('.dropdown-item:contains("Ondersteuningsvormen")').on('click', function () {
-            scrollToSection('.Ondersteuningsvormen', 0.03);
-        });
-
-        $('.dropdown-item:contains("Werkwijze")').on('click', function () {
-            scrollToSection('.werkwijze', 0.15);
-        });
-
-        // Bottom menu (burger menu) click handlers with delay
-        $('.menu-item:contains("Over mij")').on('click', function () {
-            setIsActive(false); // Close menu
-            setTimeout(() => {
-                scrollToSection('.scrollaboutmehere', .15);
-            }, 50);
-        });
-
-        $('.menu-item:contains("Hoe ik help")').on('click', function () {
-            setIsActive(false); // Close menu
-            setTimeout(() => {
-                scrollToSection('.helpgebieden', 0.44);
-            }, 50);
-        });
-
-        $('.menu-item:contains("Contact")').on('click', function () {
-            setIsActive(false); // Close menu
-            setTimeout(() => {
-                scrollToSection('.contact', 0.10);
-            }, 50);
-        });
-
         return () => {
             $(window).off('scroll');
-            $('.nav-item:contains("Over mij") .clickable').off('click');
-            $('.nav-item:contains("Hoe ik help") > .clickable').off('click');
-            $('.dropdown-item:contains("Helpgebieden")').off('click');
-            // Remove bottom menu click handlers
-            $('.menu-item:contains("Over mij")').off('click');
-            $('.menu-item:contains("Hoe ik help")').off('click');
-            $('.menu-item:contains("Contact")').off('click');
         };
     }, []);
 
+    const closeMenu = () => {
+        setIsActive(false);
+        $('body').removeClass('isInactive');
+    };
+
     const handleLogoClick = () => {
-        window.location.reload();
+        closeMenu();
+        if (pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'auto' });
+            window.dispatchEvent(new Event('refresh-fade-in'));
+            return;
+        }
+        navigate('/');
+    };
+
+    const handleRouteClick = (targetPath) => (event) => {
+        closeMenu();
+
+        if (pathname !== targetPath) {
+            return;
+        }
+
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.dispatchEvent(new Event('refresh-fade-in'));
     };
 
     const handleBurgerClick = () => {
-        if ($("body").hasClass("isInactive")) {
-            $("body").removeClass("isInactive");
+        if ($('body').hasClass('isInactive')) {
+            $('body').removeClass('isInactive');
         } else {
-            $("body").addClass("isInactive");
+            $('body').addClass('isInactive');
         }
-        setIsActive(prevState => !prevState);
+        setIsActive((prevState) => !prevState);
+    };
+
+    const handleContactClick = () => {
+        closeMenu();
+        const scrollToBottom = () => {
+            const scrollingElement = document.scrollingElement || document.documentElement;
+            const root = document.getElementById('root');
+            const contentContainer = document.querySelector('.content-container');
+            const maxScroll = Math.max(
+                document.documentElement.scrollHeight,
+                document.body.scrollHeight,
+                scrollingElement ? scrollingElement.scrollHeight : 0,
+                root ? root.scrollHeight : 0,
+                contentContainer ? contentContainer.scrollHeight : 0
+            );
+
+            window.scrollTo({ top: maxScroll, behavior: 'smooth' });
+            if (scrollingElement) {
+                scrollingElement.scrollTo({ top: maxScroll, behavior: 'smooth' });
+            }
+            if (root) {
+                root.scrollTo({ top: maxScroll, behavior: 'smooth' });
+            }
+            if (contentContainer) {
+                contentContainer.scrollTo({ top: maxScroll, behavior: 'smooth' });
+            }
+        };
+
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(scrollToBottom);
+        });
     };
 
     return (
         <div className="nav">
-            <div className="nav-logo clickable" onClick={handleLogoClick}>
+            <div className="nav-logo fade-in clickable" onClick={handleLogoClick}>
                 <img src={logo} alt="site logo with text" />
             </div>
-            <div className="nav-wrapper">
+            <div className="nav-wrapper fade-in">
                 <div className="nav-item">
-                    <span className="clickable">
+                    <NavLink
+                        className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                        to="/overmij"
+                        onClick={handleRouteClick('/overmij')}
+                    >
                         Over mij
-                    </span>
+                    </NavLink>
                 </div>
                 <div className="nav-item">
-                    <span className="clickable">
+                    <NavLink
+                        className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                        to="/hoeikhelp"
+                        onClick={handleRouteClick('/hoeikhelp')}
+                    >
                         Hoe ik help
-                        <img src={dropdown} alt="downwards arrow" />
-                    </span>
-                    <div className="nav-dropdown">
-                        <div className="dropdown-item clickable">
-                            Helpgebieden
-                        </div>
-                        <div className="dropdown-item clickable">
-                            Ondersteuningsvormen
-                        </div>
-                        <div className="dropdown-item clickable">
-                            Werkwijze
-                        </div>
-                    </div>
+                    </NavLink>
                 </div>
-                <div className="nav-item clickable">
-                    Contact
+                <div className="nav-item">
+                    <NavLink
+                        className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                        to="/blog"
+                        onClick={handleRouteClick('/blog')}
+                    >
+                        Blog
+                    </NavLink>
+                </div>
+                <div className="nav-item clickable" onClick={handleContactClick}>
+                    <span className="clickable">
+                        Contact
+                    </span>
                 </div>
             </div>
             <div className={`burger clickable ${isActive ? 'active' : ''}`} onClick={handleBurgerClick}>
@@ -145,12 +145,33 @@ function Nav() {
             <div className={`menu ${isActive ? 'active' : ''}`}>
                 <div className="items-container">
                     <div className="menu-item clickable">
-                        Over mij
+                        <NavLink
+                            className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                            to="/overmij"
+                            onClick={handleRouteClick('/overmij')}
+                        >
+                            Over mij
+                        </NavLink>
                     </div>
                     <div className="menu-item clickable">
-                        Hoe ik help
+                        <NavLink
+                            className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                            to="/hoeikhelp"
+                            onClick={handleRouteClick('/hoeikhelp')}
+                        >
+                            Hoe ik help
+                        </NavLink>
                     </div>
                     <div className="menu-item clickable">
+                        <NavLink
+                            className={({ isActive }) => `clickable${isActive ? ' active' : ''}`}
+                            to="/blog"
+                            onClick={handleRouteClick('/blog')}
+                        >
+                            Blog
+                        </NavLink>
+                    </div>
+                    <div className="menu-item clickable" onClick={handleContactClick}>
                         Contact
                     </div>
                 </div>

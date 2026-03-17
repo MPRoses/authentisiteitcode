@@ -1,27 +1,40 @@
 .FAQ {
   width: 100%;
   position: relative;
-  top: 6400px;
+  top: 0;
+  margin-top: 50px;
   left: 0;
+  overflow: visible;
+  min-height: auto;
 }
 .FAQ .section-wrapper {
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
+  left: auto;
+  transform: none;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 .FAQ .section-wrapper .section-title {
   text-align: center;
+  width: 100%;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #002D3C;
 }
 .FAQ .items-wrapper {
   width: 80%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
-  top: 100px;
+  top: 0;
+  margin-top: 100px;
   position: relative;
   justify-content: center;
   gap: 25px;
@@ -98,11 +111,14 @@
 }
 .FAQ .contact {
   width: 100%;
-  top: 200px;
-  height: 900px;
+  top: 0;
+  margin-top: 200px;
+  height: auto;
+  min-height: clamp(490px, 62vw, 500px);
   background-color: #002D3C;
   position: relative;
   padding: 2em;
+  box-sizing: border-box;
 }
 .FAQ .contact .title {
   font-size: 3.5rem;
@@ -235,9 +251,29 @@
   width: 50px;
   height: 50px;
 }
+.FAQ .creditsv2 {
+  width: 100%;
+  background-color: #002D3C;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 0.56rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  padding: 8px 12px 10px;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  transform: none;
+  white-space: nowrap;
+}
 @media screen and (max-width: 1700px) {
   .FAQ .contact .title:not(.title-form), .FAQ .contact .items-container {
-    left: 100px;
+    left: 0;
+  }
+  .FAQ .contact .title:not(.title-form) {
+    font-size: clamp(2.4rem, 3.3vw, 3.5rem);
   }
 }
 @media screen and (max-width: 1630px) {
@@ -254,9 +290,6 @@
   }
 }
 @media screen and (max-width: 1560px) {
-  .FAQ {
-    top: 5600px;
-  }
   .FAQ .section-wrapper .section-title {
     font-size: 2rem !important;
   }
@@ -269,8 +302,8 @@
   }
 }
 @media screen and (max-width: 1400px) {
-  .FAQ {
-    top: 4800px;
+  .FAQ .contact {
+    min-height: clamp(530px, 62vw, 530px);
   }
   .FAQ .contact .items-container {
     width: 700px;
@@ -295,23 +328,69 @@
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 890px) {
-  .FAQ {
-    top: 4900px;
-  }
-  .FAQ .contact .contact-form {
-    width: 70%;
-    left: 10%;
+@media screen and (max-width: 960px) {
+  .FAQ .contact {
+    height: auto;
+    min-height: auto;
+    padding: 32px 5% 28px;
   }
   .FAQ .contact .title {
+    position: relative;
+    top: 0;
+    left: 0;
     text-align: center;
+    width: 100%;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    margin-bottom: 16px;
+  }
+  .FAQ .contact .title-form {
+    display: none;
+  }
+  .FAQ .contact .contact-form {
+    position: relative;
+    width: min(100%, 760px);
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
   }
   .FAQ .contact .items-container {
-    top: 580px;
-    width: 70%;
+    position: relative;
+    width: min(100%, 760px);
+    left: 0;
+    top: 0;
+    margin: 22px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .FAQ .contact .items-container .item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .FAQ .contact .items-container .item p {
+    color: white;
+  }
+}
+@media screen and (max-width: 890px) {
+  .FAQ .contact .contact-form {
+    width: min(100%, 760px);
+    left: 0;
+  }
+  .FAQ .contact .items-container {
+    width: min(100%, 760px);
+    top: 0;
   }
   .FAQ .contact .items-container p {
     font-size: 1rem;
+  }
+  .FAQ .items-wrapper {
+    width: 100%;
+    left: 0;
+    margin-top: 48px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    gap: 14px;
   }
   .FAQ .items-wrapper .faq-block {
     width: 100%;
@@ -319,164 +398,50 @@
     justify-content: flex-start;
   }
   .FAQ .items-wrapper .item {
-    width: 90%;
+    width: 100%;
+    min-height: 78px;
+    height: auto;
     margin-left: 0;
-    padding: 10px 50px 10px 20px;
+    padding: 16px 64px 16px 18px;
     display: flex;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
   }
   .FAQ .items-wrapper .item .title {
-    max-width: 95% !important;
+    max-width: 100% !important;
     white-space: normal;
-    word-break: break-word;
-    line-height: 1.3;
-    font-size: 0.75rem;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.45;
+    font-size: 0.82rem;
     position: relative;
     top: auto;
     left: auto;
     transform: none;
   }
-}
-@media screen and (max-width: 1000px) {
-  .FAQ {
-    top: 4600px;
+  .FAQ .items-wrapper .item .select {
+    right: 22px;
+  }
+  .FAQ .items-wrapper .item .var {
+    right: 14px;
+  }
+  .FAQ .items-wrapper .answer-wrapper {
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+  }
+  .FAQ .items-wrapper .answer-wrapper.open {
+    padding: 16px 18px;
   }
 }
-@media screen and (max-width: 920px) {
-  .FAQ {
-    top: 4700px;
-  }
-}
-@media screen and (max-width: 845px) {
-  .FAQ {
-    top: 4800px;
-  }
-}
-@media screen and (max-width: 795px) {
-  .FAQ {
-    top: 4900px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .FAQ {
-    top: 4500px;
-  }
-  .FAQ .contact {
-    height: 1500px;
-  }
-}
-@media screen and (max-width: 745px) {
-  .FAQ {
-    top: 4600px;
-  }
-}
-@media screen and (max-width: 693px) {
-  .FAQ {
-    top: 4700px;
-  }
-}
+
 @media screen and (max-width: 655px) {
-  .FAQ {
-    top: 4800px;
+  .contact .items-container {
+    width: 100%;
   }
-  .FAQ .contact .items-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .FAQ .contact .title {
+  .contact .title {
     font-size: 2.6rem;
-  }
-}
-@media screen and (max-width: 642px) {
-  .FAQ {
-    top: 4900px;
-  }
-}
-@media screen and (max-width: 610px) {
-  .FAQ {
-    top: 5000px;
-  }
-}
-@media screen and (max-width: 596px) {
-  .FAQ .contact .items-container {
-    top: 650px;
-  }
-}
-@media screen and (max-width: 573px) {
-  .FAQ {
-    top: 5100px;
-  }
-}
-@media screen and (max-width: 557px) {
-  .FAQ {
-    top: 5200px;
-  }
-}
-@media screen and (max-width: 547px) {
-  .FAQ {
-    top: 5300px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .FAQ {
-    top: 5500px;
-  }
-}
-@media screen and (max-width: 496px) {
-  .FAQ {
-    top: 5600px;
-  }
-}
-@media screen and (max-width: 490px) {
-  .FAQ {
-    top: 5700px;
-  }
-}
-@media screen and (max-width: 478px) {
-  .FAQ {
-    top: 5900px;
-  }
-}
-@media screen and (max-width: 462px) {
-  .FAQ {
-    top: 6000px;
-  }
-}
-@media screen and (max-width: 435px) {
-  .FAQ {
-    top: 6100px;
-  }
-  .FAQ .contact .title {
-    left: 10%;
-  }
-  .FAQ .contact .items-container {
-    left: 10%;
-  }
-}
-@media screen and (max-width: 425px) {
-  .FAQ {
-    top: 6400px;
-  }
-}
-@media screen and (max-width: 397px) {
-  .FAQ {
-    top: 6500px;
-  }
-}
-@media screen and (max-width: 370px) {
-  .FAQ {
-    top: 6560px;
-  }
-}
-@media screen and (max-width: 365px) {
-  .FAQ {
-    top: 6650px;
-  }
-}
-@media screen and (max-width: 325px) {
-  .FAQ {
-    top: 6750px;
   }
 }
 

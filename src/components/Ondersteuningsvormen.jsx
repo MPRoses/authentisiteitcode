@@ -9,8 +9,8 @@ import img3 from './../img/img3.webp';
 function Ondersteuningsvormen() {
 
     return (
-        <div className="Ondersteuningsvormen section">
-            <div className="section-wrapper fade-in">
+        <div id="ondersteuningsvormen" className="Ondersteuningsvormen section fade-in">
+            <div className="section-wrapper ">
                 <div className="section-title">
                     Hulp en begeleiding afgestemd op uw vraag
                 </div>
@@ -18,7 +18,7 @@ function Ondersteuningsvormen() {
                     Als specialist in autisme en sensorische verwerking bied ik zowel psycho-educatie, scholing als persoonlijke ondersteuning aan. Of u nu op zoek bent naar praktische informatie voor uzelf, uw organisatie, of uw kind, ik help u verder met op maat gemaakte oplossingen die aansluiten bij uw specifieke situatie.                </div>
             </div>
             <div className="items-wrapper">
-                <div className="wrapper-item fade-in">
+                <div className="wrapper-item ">
                     <div className="item-text">
                         <span>Psycho-educatie & scholing</span>
                         <div>
@@ -44,7 +44,7 @@ function Ondersteuningsvormen() {
                         <img src={img1} alt="main cover" loading="eager"/>
                     </div>
                 </div>
-                <div className="wrapper-item fade-in">
+                <div className="wrapper-item ">
                     <div className="item-text">
                         <span>Persoonlijke ondersteuning</span>
                         <div>
@@ -54,14 +54,14 @@ function Ondersteuningsvormen() {
                             is.
                             <br></br><br></br>
                             We onderzoeken samen welke aanpassingen helpend zijn en hoe u grip kunt krijgen op situaties
-                            die moeilijk verlopen — thuis, op school of in de vrije tijd.
+                            die moeilijk verlopen thuis, op school of in de vrije tijd.
                         </div>
                     </div>
                     <div className="section-img">
                         <img src={img2} alt="main cover" loading="eager"/>
                     </div>
                 </div>
-                <div className="wrapper-item fade-in">
+                <div className="wrapper-item ">
                     <div className="item-text">
                         <span>Ondersteuningsprofielen & diagnostiek</span>
                         <div>

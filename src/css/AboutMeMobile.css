@@ -1,0 +1,84 @@
+.about-me-mobile-page {
+  width: 100%;
+  min-height: auto;
+  padding: 170px 0 90px;
+  position: relative;
+}
+.about-me-mobile-page .about-me-mobile-wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+.about-me-mobile-page .about-me-mobile-title {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
+}
+.about-me-mobile-page .about-me-mobile-bio {
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
+  font-size: 1.07rem;
+  line-height: 1.62;
+}
+.about-me-mobile-page .about-me-mobile-bio p {
+  margin: 0 0 20px;
+}
+.about-me-mobile-page .about-me-mobile-image {
+  width: 90%;
+  max-width: 90%;
+  margin-top: 40px;
+  left: 5%;
+  margin-bottom: 40px;
+  position: relative;
+  background-color: #3198A5;
+  border-radius: 28px;
+  transform: none;
+  transition: transform 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  overflow: visible;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.about-me-mobile-page .about-me-mobile-image img {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  top: -15px;
+  left: -15px;
+  position: absolute;
+  background-color: #F4F4F4;
+  border-radius: 28px;
+  object-fit: cover;
+  transition: width 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89), height 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.about-me-mobile-page .img-class-1 {
+  aspect-ratio: 180/250;
+}
+.about-me-mobile-page .img-class-2 {
+  aspect-ratio: 300/550;
+}
+.about-me-mobile-page .about-me-mobile-read-more {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  border-radius: 40px;
+  border: 0.1vw solid #002D3C;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #002D3C;
+  text-decoration: none;
+}
+
+.about-me-mobile-page.about-me-mobile-preview {
+  min-height: auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+/*# sourceMappingURL=AboutMeMobile.css.map */

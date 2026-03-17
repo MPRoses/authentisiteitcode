@@ -1,150 +1,126 @@
 .werkwijze
   width: 100%
-  height: 1300px
-  position: absolute
-  top: 5600px
+  min-height: auto
+  position: relative
+  top: 0
   left: 0
+  padding: 120px 0 100px
+
+  .werkwijze-layout
+    width: min(110%, 1240px)
+    margin: 0 auto
+    padding: 0 20px
+    box-sizing: border-box
+    display: grid
+    grid-template-columns: minmax(0, 1.35fr) 190px minmax(0, 1fr)
+    column-gap: 76px
+    align-items: start
+
+  .left-column
+    display: flex
+    flex-direction: column
+
   .section-wrapper
-    top: 0
+    width: 100%
+    color: #002D3C
+    font-family: "Inter", sans-serif
+
     .section-title
-      font-size: 3rem
+      text-align: left
+      font-size: clamp(2.2rem, 4vw, 3rem)
+      font-weight: 700
+      line-height: 1.55
+
     .section-bio
-      font-size: 1.2rem
-      width: 40vw
-      max-width: 620px
+      margin-top: 16px
+      font-size: clamp(1rem, 1.5vw, 1.2rem)
+      line-height: 1.55
+      width: min(100%, 720px)
+
       p
         margin-bottom: 20px
+
   .section-img
-    position: absolute
-    left: 200px
-    top: 220px
-    height: 450px
-    width: 670px
-  .werkwijze-stars
-    width: 190px
+    position: relative
+    width: min(100%, 980px)
+    margin: 32px 0 0
+    height: auto
+    left: 0
     top: 0
-    position: absolute
-    left: 55%
-    transform: translateX(-50%)
+    border-radius: 34px
+    background: #3198A5
+    aspect-ratio: 980 / 540
+
+    img
+      position: absolute
+      width: calc(100% - 5px)
+      height: calc(100% - 5px)
+      top: -15px
+      left: -15px
+      border-radius: 34px
+      object-fit: cover
+
+  .werkwijze-stars
+    width: 155px
+    align-self: start
+    justify-self: center
+    margin-top: 28px
+
   .steps-container
-    position: absolute
-    top: 40px
-    width: 540px
-    right: 10%
+    width: 100%
+    margin-top: 28px
+    display: flex
+    flex-direction: column
+    gap: 56px
+
     .step-item
-      width: 100%
-      margin-bottom: 140px
       font-family: "Inter", sans-serif
       color: #002D3C
       font-weight: 600
-      font-size: 2rem
+      font-size: clamp(1.2rem, 1.5vw, 1.6rem)
+      line-height: 1.55
+
       .bio
-        font-size: 1.2rem
+        margin-top: 8px
+        font-size: clamp(0.88rem, 0.88vw, 1rem)
+        line-height: 1.55
         font-weight: 400
-        padding-left: 30px
-      &:nth-child(3)
-        margin-bottom: 0
-  @media screen and (max-width: 1780px)
+        padding-left: 0
+
+  @media screen and (max-width: 1250px)
+    .werkwijze-layout
+      grid-template-columns: 1fr
+      row-gap: 24px
+
+    .steps-container
+      margin-top: 0
+      gap: 26px
+
     .werkwijze-stars
       display: none
-  @media screen and (max-width: 1560px)
-    height: auto
-    display: flex
-    flex-direction: column
-    align-items: center
-    padding: 80px 0
-    position: relative
 
+    .section-img
+      width: 100%
+      max-width: 980px
+
+  @media screen and (max-width: 500px)
     .section-wrapper
-      width: 80vw
-      text-align: left
+      .section-title
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem)
 
       .section-bio
-        width: 80vw
-        max-width: none
+        font-size: clamp(1rem, 3.8vw, 1.1rem)
+
+  @media screen and (max-width: 410px)
+    .section-wrapper
+      .section-title
+        font-size: clamp(1.5rem, 5vw, 2rem)
+
+      .section-bio
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem)
 
     .section-img
-      position: relative
-      width: 80vw
-      left: 0
-      top: 70px
-      margin: 60px
+      border-radius: 26px
 
-    .steps-container
-      position: relative
-      width: 80vw
-      top: unset
-      right: unset
-      margin-top: 60px
-      display: flex
-      flex-direction: column
-      align-items: flex-start
-
-      .step-item
-        width: 100%
-        margin-bottom: 40px
-
-        .bio
-          padding-left: 0
-
-        &:last-child
-          margin-bottom: 0
-  @media screen and (max-width: 1560px)
-    .section-img
-      top: 100px
-  @media screen and (max-width: 546px)
-    .section-img
-      top: 150px
-    .steps-container
-      margin-top: 100px
-
-  @media screen and (max-width: 1400px)
-    top: 4800px
-  @media screen and (max-width: 1000px)
-    top: 4600px
-  @media screen and (max-width: 920px)
-    top: 4700px
-  @media screen and (max-width: 840px)
-    top: 4800px
-  @media screen and (max-width: 800px)
-    top: 4900px
-  @media screen and (max-width: 768px)
-    top: 4500px
-  @media screen and (max-width: 745px)
-    top: 4600px
-  @media screen and (max-width: 693px)
-    top: 4700px
-  @media screen and (max-width: 655px)
-    top: 4800px
-  @media screen and (max-width: 642px)
-    top: 4900px
-  @media screen and (max-width: 610px)
-    top: 5000px
-  @media screen and (max-width: 573px)
-    top: 5100px
-  @media screen and (max-width: 557px)
-    top: 5200px
-  @media screen and (max-width: 547px)
-    top: 5300px
-  @media screen and (max-width: 520px)
-    top: 5500px
-  @media screen and (max-width: 496px)
-    top: 5600px
-  @media screen and (max-width: 490px)
-    top: 5700px
-  @media screen and (max-width: 478px)
-    top: 5900px
-  @media screen and (max-width: 462px)
-    top: 6000px
-  @media screen and (max-width: 435px)
-    top: 6100px
-  @media screen and (max-width: 425px)
-    top: 6400px
-  @media screen and (max-width: 397px)
-    top: 6500px
-  @media screen and (max-width: 370px)
-    top: 6560px
-  @media screen and (max-width: 365px)
-    top: 6650px
-  @media screen and (max-width: 325px)
-    top: 6750px
+      img
+        border-radius: 26px

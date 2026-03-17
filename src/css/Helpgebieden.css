@@ -1,45 +1,58 @@
 .helpgebieden {
   width: 100%;
-  position: absolute;
-  top: 2500px;
+  min-height: auto;
+  position: relative;
+  overflow: visible;
+  top: 0;
+  padding: 180px 0 80px;
   left: 0;
 }
 .helpgebieden .section-wrapper {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: min(100%, 1000px);
+  min-height: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
 }
 .helpgebieden .section-wrapper .section-title {
   text-align: center;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  line-height: 1.55;
 }
 .helpgebieden .section-wrapper .section-bio {
-  font-size: 1.2rem;
-  width: 750px;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  width: min(100%, 750px);
+  margin-top: 20px;
+  line-height: 1.55;
   text-align: center;
-}
-.helpgebieden .section-wrapper .section-bio p {
-  margin-bottom: 20px;
 }
 .helpgebieden .items-wrapper {
   width: 100%;
   max-width: 1300px;
   position: relative;
-  margin: 325px auto 0;
+  margin: 70px auto 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 0 20px;
+  justify-content: center;
+  gap: clamp(18px, 2vw, 30px);
+  padding: 0 clamp(16px, 2.5vw, 28px);
   flex-wrap: wrap;
 }
 .helpgebieden .items-wrapper .item {
-  flex: 1 1 30%;
-  max-width: 350px;
+  flex: 1 1 320px;
+  max-width: 360px;
   min-width: 280px;
   background-color: #3198A5;
   border-radius: 40px;
@@ -66,6 +79,7 @@
   width: 20px;
 }
 .helpgebieden .items-wrapper .item .item-content .title {
+  width: 95%;
   font-size: 1.1rem;
   text-align: left;
   margin-bottom: 20px;
@@ -75,51 +89,74 @@
   font-size: 0.9rem;
   text-align: left;
 }
-@media screen and (max-width: 1000px) {
-  .helpgebieden {
-    top: 1900px;
-  }
+@media screen and (max-width: 1150px) {
   .helpgebieden .items-wrapper {
     flex-direction: column;
     align-items: center;
     gap: 40px;
   }
   .helpgebieden .items-wrapper .item {
-    width: 75%;
+    width: 90%;
     max-width: none;
-    left: -20px !important;
+    margin-left: 0;
+    margin-right: 5%;
+    left: 0 !important;
   }
   .helpgebieden .section-wrapper .section-bio {
-    font-size: 1rem;
+    width: calc(100% - 20px);
+    font-size: clamp(1rem, 3.8vw, 1.1rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .helpgebieden .section-wrapper .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
     text-align: left;
-    left: -10px !important;
-    width: 74vw;
+    width: 100%;
+  }
+  .helpgebieden .section-wrapper .section-bio {
+    font-size: clamp(1rem, 3.8vw, 1.1rem);
+    width: 100%;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 450px) {
+  .helpgebieden .items-wrapper .item .item-content img {
+    display: none;
   }
 }
 @media screen and (max-width: 795px) {
   .helpgebieden {
-    pointer-events: none;
-    top: 2000px;
+    pointer-events: all;
+  }
+}
+@media screen and (max-width: 410px) {
+  .helpgebieden .section-wrapper .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .helpgebieden .section-wrapper .section-bio {
+    font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+    width: calc(100% - 20px);
+    text-align: left;
   }
 }
 @media screen and (max-width: 768px) {
   .helpgebieden {
-    top: 1500px;
+    top: 0;
   }
 }
 @media screen and (max-width: 530px) {
   .helpgebieden {
-    top: 1550px;
+    top: 0;
   }
 }
 @media screen and (max-width: 490px) {
   .helpgebieden {
-    top: 1600px;
+    top: 0;
   }
 }
 @media screen and (max-width: 470px) {
   .helpgebieden {
-    top: 1660px;
+    top: 0;
   }
 }
 

@@ -1,245 +1,199 @@
-.about-close {
-  position: sticky;
-  top: 3rem;
-  left: calc(97.5% - 40px);
-  width: 40px;
-  z-index: 10000;
-}
-.about-close .icn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-.about-close .icn span {
-  background-color: #002D3C;
-  height: 2px;
-  width: 30px;
-  position: absolute;
-  transition: transform 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 0.63s;
-}
-.about-close .icn span:nth-child(1) {
-  transform: rotate(45deg);
-}
-.about-close .icn span:nth-child(2) {
-  opacity: 0;
-}
-.about-close .icn span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.about-me-mobile {
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  top: 0 !important;
-  left: 0 !important;
-  display: none;
-  overflow-y: auto;
-  opacity: 0;
-  z-index: 1232131231;
-  background-color: #f8faff;
-  overflow-x: hidden;
-  transition: opacity 0.63s cubic-bezier(0.18, 0.7, 0.34, 0.89);
-  margin-bottom: 60px;
-  color: #002D3C;
-}
-.about-me-mobile .section-wrapper {
-  position: relative;
-  left: 5% !important;
-  top: 30px !important;
-  padding-bottom: 20px;
-}
-.about-me-mobile .section-img {
-  position: relative !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  height: 300px !important;
-  padding-bottom: 15px;
-}
-.about-me-mobile .section-img img {
-  width: 100%;
-  position: relative;
-  height: 100%;
-}
-.about-me-mobile .photo-10 {
-  height: 400px !important;
-}
-
 .about-me {
   width: 100%;
-  height: 1300px;
-  position: absolute;
-  top: 950px;
-  left: 0;
-}
-.about-me .section-wrapper {
+  min-height: auto;
+  position: relative;
   top: 0;
+  left: 0;
+  padding: 180px 0 100px;
+  overflow-y: hidden;
 }
-.about-me .section-wrapper .section-title {
-  font-size: 2.5rem;
+.about-me .about-me-container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 0vw, 56px);
+  position: relative;
+  box-sizing: border-box;
 }
-.about-me .section-wrapper .section-bio {
-  font-size: 1.32rem;
-  width: 40vw;
-  max-width: 762px;
+.about-me .about-me-wrapper {
+  position: relative;
+  width: min(100%, 900px);
+  z-index: 2;
 }
-.about-me .section-wrapper .section-bio .read-more {
+.about-me .about-me-wrapper .section-title {
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  margin-left: -10px;
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
+}
+.about-me .about-me-wrapper .section-bio {
+  width: 100%;
+  max-width: 700px;
+  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+  line-height: 1.62;
+  padding-top: 20px;
+}
+.about-me .about-me-wrapper .section-bio p {
+  margin: 0 0 20px;
+  color: #002D3C;
+  font-family: "Inter", sans-serif;
+}
+.about-me .about-me-wrapper .section-bio .read-more {
   display: none;
+  margin-bottom: 20px;
 }
-.about-me .section-wrapper .section-bio .read-more .read-more-btn {
+.about-me .about-me-wrapper .section-bio .read-more p {
+  margin-bottom: 14px;
+}
+.about-me .about-me-wrapper .section-bio .read-more .read-more-btn {
   width: 120px;
+  height: 45px;
   background-color: #002D3C;
   border-radius: 15px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 45px;
-  left: 0;
-  bottom: -20px;
-  position: relative;
-  z-index: 600;
-  margin-left: 0;
 }
-.about-me .section-wrapper .section-bio .read-more .bio-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  color: white;
-  z-index: 9999;
-  padding: 2rem 1.2rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-.about-me .section-wrapper .section-bio .read-more .bio-overlay .close-btn {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: white;
-  z-index: 10000;
-}
-.about-me .section-wrapper .section-bio .read-more .bio-overlay .bio-content {
-  margin-top: 3rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-.about-me .section-wrapper .section-bio .read-more .bio-overlay .bio-content p {
-  margin-bottom: 1.2rem;
-}
-.about-me .section-wrapper .section-bio .full-bio {
+.about-me .about-me-wrapper .section-bio .full-bio {
   display: block;
 }
-.about-me .section-wrapper .section-bio p {
-  margin-bottom: 20px;
-}
-.about-me .section-img {
+.about-me .about-me-gallery {
   position: absolute;
-  left: unset;
+  top: 60px;
+  right: clamp(0px, 1.2vw, 24px);
+  width: min(44vw, 70px);
+  min-height: 1360px;
+  pointer-events: none;
+}
+.about-me .about-me-gallery .section-img {
+  position: absolute;
+  left: auto;
+  background-color: #3198A5;
+  z-index: 3;
+  border-radius: 28px;
+  transform: scale(0.9);
+  transition: transform 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89), opacity 2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.about-me .about-me-gallery .section-img img {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  top: -15px;
+  background-color: #F4F4F4;
+  position: absolute;
+  left: -15px;
+  border-radius: 28px;
+  will-change: width;
+  transition: width 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89), height 1.3s cubic-bezier(0.18, 0.7, 0.34, 0.89);
+  object-fit: cover;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .about-me .img-class-1 {
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 250px;
 }
 .about-me .img-class-2 {
   width: 300px;
   height: 550px;
 }
 .about-me .img-class-3 {
-  width: 450px;
-  height: 700px;
+  width: 380px;
+  height: 555px;
 }
 .about-me .img-top-right {
   top: 0;
-  right: 50px;
+  right: 15px;
 }
 .about-me .img-middle-right {
-  top: 660px;
-  right: 57px;
+  top: 523px;
+  right: 19px;
 }
 .about-me .img-bottom-right {
-  top: 1188px;
-  right: 151px;
+  top: 1056px;
+  right: 133px;
 }
 .about-me .img-top-left {
-  top: 18px;
-  right: 490px;
+  top: 15px;
+  right: 390px;
 }
 .about-me .img-middle-left {
-  top: 297px;
-  right: 485px;
+  top: 248px;
+  right: 384px;
 }
 .about-me .img-bottom-left {
-  top: 805px;
-  right: 343px;
-}
-@media screen and (max-width: 1700px) {
-  .about-me .img-top-right {
-    top: 0;
-    right: 50px;
-  }
-  .about-me .img-middle-right {
-    top: 660px;
-    right: 57px;
-  }
-  .about-me .img-bottom-right {
-    top: 1188px;
-    right: 62px;
-  }
-  .about-me .img-top-left {
-    top: 675px;
-    right: 358px;
-    display: none;
-  }
-  .about-me .img-middle-left {
-    top: 297px;
-    right: 485px;
-    display: none;
-  }
-  .about-me .img-bottom-left {
-    top: 805px;
-    right: 343px;
-    display: none;
-  }
+  top: 766px;
+  right: 308px;
 }
 @media screen and (max-width: 1500px) {
-  .about-me .section-wrapper .section-bio {
-    font-size: 1.1rem !important;
+  .about-me .about-me-container {
+    padding-left: clamp(90px, 5vw, 84px);
+    padding-right: clamp(20px, 2.5vw, 40px);
   }
-}
-@media screen and (max-width: 1300px) {
-  .about-me .section-wrapper .section-bio {
-    font-size: 0.97rem !important;
+  .about-me .about-me-wrapper {
+    width: min(100%, 680px);
   }
-}
-@media screen and (max-width: 1000px) {
-  .about-me .section-img {
+  .about-me .about-me-gallery {
+    width: min(40vw, 500px);
+    right: 8px;
+  }
+  .about-me .img-top-right,
+  .about-me .img-middle-right,
+  .about-me .img-bottom-right {
     display: none;
   }
-  .about-me .section-wrapper .section-bio {
-    width: 80vw !important;
-    max-width: 1300px !important;
+  .about-me .img-top-left {
+    top: 0;
+    right: 57px;
+  }
+  .about-me .img-middle-left {
+    top: 232px;
+    right: 50px;
+  }
+  .about-me .img-bottom-left {
+    top: 751px;
+    right: 47px;
   }
 }
-@media screen and (max-width: 767px) {
-  .about-me .section-wrapper {
-    top: 90px;
+@media screen and (max-width: 1500px) and (min-width: 1251px) {
+  .about-me .about-me-container {
+    min-height: 1420px;
   }
-  .about-me .read-more {
-    display: block !important;
+}
+@media screen and (max-width: 1250px) {
+  .about-me {
+    padding-top: 160px;
   }
-  .about-me .full-bio {
-    display: none !important;
+  .about-me .about-me-wrapper {
+    width: min(100%, 620px);
   }
+  .about-me .about-me-gallery {
+    width: min(36vw, 440px);
+  }
+}
+
+.about-me.about-me-preview {
+  min-height: auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.about-me .about-me-read-more {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  border-radius: 40px;
+  border: 0.1vw solid #002D3C;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 40px;
+  color: #002D3C;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=AboutMe.css.map */

@@ -1,7 +1,40 @@
+$cubic: 1.2s cubic-bezier(.18, .7, .34, .89)
+
+html
+  overflow-y: auto
+
+body,
+#root
+  overflow-y: hidden
+
+body
+  font-family: "Inter", sans-serif
+
+button,
+input,
+textarea,
+select
+  font: inherit
+
 .fade-in
   opacity: 0
-  transition: opacity 2s cubic-bezier(.18, .7, .34, .89) 1s
+  transition: opacity $cubic, transform $cubic
   will-change: opacity, transform
+  transform: scale(1) translateY(50px)
+  &.active
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+.scroll-reveal-section
+  width: 100%
+
+.section
+  width: 100%
+  min-height: 100vh
+  position: relative
+  overflow: visible
+  top: 0
+  left: 0
 
 .content-container
   overflow-x: hidden
@@ -10,58 +43,45 @@
   background-color: white
   top: 0
   left: 0
+  width: 100%
   box-shadow: -10px 0 15px -5px rgba(0, 45, 60, 0.7), 10px 0 15px -5px rgba(0, 45, 60, 0.7)
 
-.content-container, body, #root
-  height: 7420px
-  transition: height .3s cubic-bezier(.18, .7, .34, .89)
+.content-container
+  height: fit-content
+  overflow-x: hidden
 
-  @media screen and (max-width: 1560px)
-    height: 8020px
-    transition: none !important
+.home-hoeikhelp-cta
+  width: 100%
+  display: flex
+  justify-content: center
+  margin: 12px 0 100px 0
+  padding: 0 24px
+  box-sizing: border-box
 
-  @media screen and (max-width: 1400px)
-    height: 7420px
+.home-hoeikhelp-link
+  min-width: 240px
+  height: 60px
+  padding: 0 28px
+  border-radius: 40px
+  border: 1px solid #002D3C
+  color: #002D3C
+  text-decoration: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  font-family: "Inter", sans-serif
+  font-size: 1rem
+  background-color: transparent
 
-  @media screen and (max-width: 1150px)
-    height: 7520px
-  @media screen and (max-width: 1000px)
-    height: 7220px
-  @media screen and (max-width: 900px)
-    height: 7420px
-  @media screen and (max-width: 850px)
-    height: 7720px
-  @media screen and (max-width: 768px)
-    height: 7400px
-  @media screen and (max-width: 740px)
-    height: 7500px
-  @media screen and (max-width: 660px)
-    height: 7800px
-  @media screen and (max-width: 640px)
-    height: 7900px
-  @media screen and (max-width: 610px)
-    height: 8000px
-  @media screen and (max-width: 596px)
-    height: 8100px
-  @media screen and (max-width: 571px)
-    height: 8350px
-  @media screen and (max-width: 544px)
-    height: 8550px
-  @media screen and (max-width: 523px)
-    height: 8750px
-  @media screen and (max-width: 486px)
-    height: 8900px
-  @media screen and (max-width: 480px)
-    height: 9200px
-  @media screen and (max-width: 439px)
-    height: 9300px
-  @media screen and (max-width: 425px)
-    height: 9700px
-  @media screen and (max-width: 390px)
-    height: 9900px
-  @media screen and (max-width: 369px)
-    height: 10000px
-  @media screen and (max-width: 360px)
-    height: 10200px
-  @media screen and (max-width: 300px)
-    height: 10400px
+@media screen and (max-width: 640px)
+  .home-hoeikhelp-cta
+    padding: 0 5%
+
+  .home-hoeikhelp-link
+    width: 100%
+
+@media (prefers-reduced-motion: reduce)
+  .scroll-reveal
+    opacity: 1
+    transform: none
