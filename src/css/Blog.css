@@ -172,9 +172,10 @@
 }
 @media screen and (max-width: 980px) {
   .blog {
-    padding: 120px 0 100px;
+    padding: var(--mobile-page-top-spacing) 0 96px;
   }
   .blog .blog-container {
+    margin: 0 auto;
     padding: 0 5%;
   }
   .blog .blog-intro {
@@ -197,9 +198,6 @@
   .blog .blog-intro-actions {
     display: none;
   }
-  .blog .blog-intro-featured {
-    display: none;
-  }
   .blog .blog-header {
     display: none;
   }
@@ -208,6 +206,13 @@
   .blog .blog-intro-link:hover,
   .blog .blog-intro-link:active {
     width: 100%;
+  }
+  .blog .blog-intro {
+    gap: 26px;
+  }
+  .blog .blog-intro-featured {
+    display: block;
+    padding: 14px;
   }
 }
 

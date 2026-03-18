@@ -97,7 +97,7 @@
 }
 @media (max-width: 500px) {
   .hero {
-    padding-top: 40px;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px));
   }
   .hero .section-wrapper .section-title {
     font-size: clamp(1.6rem, 5.5vw, 2.2rem);
@@ -109,7 +109,7 @@
 }
 @media (max-width: 410px) {
   .hero {
-    padding-top: 35px;
+    padding-top: calc(68px + env(safe-area-inset-top, 0px));
   }
   .hero .section-wrapper .section-title {
     font-size: clamp(1.5rem, 5vw, 2rem);

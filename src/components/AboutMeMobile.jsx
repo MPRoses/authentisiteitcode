@@ -12,7 +12,7 @@ function AboutMeMobile({ preview = false }) {
     };
 
     return (
-        <div className={`about-me-mobile-page scrollaboutmehere section fade-in ${preview ? 'about-me-mobile-preview' : ''}`}>
+        <div className={`about-me-mobile-page scrollaboutmehere section ${preview ? 'fade-in about-me-mobile-preview' : ''}`}>
             <div className="about-me-mobile-wrapper">
                 <h2 className="about-me-mobile-title">Over mij</h2>
 

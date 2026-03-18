@@ -174,9 +174,10 @@
         transform: scale(1.05)
 
   @media screen and (max-width: 980px)
-    padding: 120px 0 100px
+    padding: var(--mobile-page-top-spacing) 0 96px
 
     .blog-container
+      margin: 0 auto
       padding: 0 5%
 
     .blog-intro
@@ -197,9 +198,6 @@
     .blog-intro-actions
       display: none
 
-    .blog-intro-featured
-      display: none
-
     .blog-header
       display: none
 
@@ -208,3 +206,10 @@
     .blog-intro-link:hover,
     .blog-intro-link:active
       width: 100%
+
+    .blog-intro
+      gap: 26px
+
+    .blog-intro-featured
+      display: block
+      padding: 14px

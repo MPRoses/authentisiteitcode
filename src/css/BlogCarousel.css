@@ -185,11 +185,12 @@
 
 @media screen and (max-width: 980px) {
   .blog-carousel {
-    padding: 70px 0 70px;
+    padding: var(--mobile-section-gap) 0 88px;
   }
   .blog-carousel-container {
     grid-template-columns: 1fr;
     padding: 0 5%;
+    gap: 26px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -206,7 +207,8 @@
     width: 100%;
   }
   .blog-carousel-panel {
-    display: none;
+    display: block;
+    padding: 14px;
   }
   .blog-carousel-controls {
     flex-wrap: wrap;

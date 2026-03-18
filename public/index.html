@@ -5,6 +5,25 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
+  <script>
+    (function handleGitHubPagesRedirect() {
+      var search = window.location.search;
+
+      if (!search || search.indexOf("?p=/") !== 0) {
+        return;
+      }
+
+      var raw = search.slice(3).split("&q=");
+      var decodedPath = raw[0].replace(/~and~/g, "&");
+      var decodedQuery = raw[1] ? "?" + raw[1].replace(/~and~/g, "&") : "";
+
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname.replace(/\/$/, "") + decodedPath + decodedQuery + window.location.hash
+      );
+    })();
+  </script>
 
   <!-- SEO Meta Tags -->
   <title>Autisme Coaching en Prikkelverwerking | Authentisiteit | Lisse & Bollenstreek</title>

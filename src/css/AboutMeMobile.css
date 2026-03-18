@@ -77,8 +77,18 @@
 
 .about-me-mobile-page.about-me-mobile-preview {
   min-height: auto;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 64px;
+  padding-bottom: var(--mobile-section-gap);
+}
+
+@media screen and (max-width: 640px) {
+  .about-me-mobile-page {
+    padding-top: var(--mobile-page-top-spacing);
+    padding-bottom: 72px;
+  }
+  .about-me-mobile-page .about-me-mobile-bio .about-me-mobile-read-more {
+    margin-top: 28px;
+  }
 }
 
 /*# sourceMappingURL=AboutMeMobile.css.map */

@@ -4,6 +4,12 @@ import $ from 'jquery';
 import './../css/Nav.css';
 import logo from './../img/logo.svg';
 
+function refreshFadeInAfterScroll() {
+    window.setTimeout(() => {
+        window.dispatchEvent(new Event('refresh-fade-in'));
+    }, 80);
+}
+
 function Nav() {
     const [isActive, setIsActive] = useState(false);
     const { pathname } = useLocation();
@@ -38,7 +44,7 @@ function Nav() {
         closeMenu();
         if (pathname === '/') {
             window.scrollTo({ top: 0, behavior: 'auto' });
-            window.dispatchEvent(new Event('refresh-fade-in'));
+            refreshFadeInAfterScroll();
             return;
         }
         navigate('/');
@@ -53,7 +59,7 @@ function Nav() {
 
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: 'auto' });
-        window.dispatchEvent(new Event('refresh-fade-in'));
+        refreshFadeInAfterScroll();
     };
 
     const handleBurgerClick = () => {

@@ -7,7 +7,7 @@
   padding: 120px 0 100px;
 }
 .werkwijze .werkwijze-layout {
-  width: min(110%, 1240px);
+  width: min(100%, 1240px);
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -50,6 +50,7 @@
   border-radius: 34px;
   background: #3198A5;
   aspect-ratio: 980/540;
+  overflow: hidden;
 }
 .werkwijze .section-img img {
   position: absolute;
@@ -91,6 +92,7 @@
   .werkwijze .werkwijze-layout {
     grid-template-columns: 1fr;
     row-gap: 24px;
+    padding: 0 5%;
   }
   .werkwijze .steps-container {
     margin-top: 0;

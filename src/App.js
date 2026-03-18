@@ -25,6 +25,12 @@ import photo8 from "./img/photo8.webp";
 import photo9 from "./img/photo9.webp";
 import photo10 from "./img/photo10.webp";
 
+function refreshFadeInAfterScroll() {
+    window.setTimeout(() => {
+        window.dispatchEvent(new Event("refresh-fade-in"));
+    }, 80);
+}
+
 function ScrollToTopOnRouteChange() {
     const { pathname, hash, state } = useLocation();
 
@@ -36,9 +42,11 @@ function ScrollToTopOnRouteChange() {
                 if (element) {
                     const targetTop = element.getBoundingClientRect().top + window.scrollY;
                     window.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+                    refreshFadeInAfterScroll();
                     return;
                 } else {
                     window.scrollTo(0, 0);
+                    refreshFadeInAfterScroll();
                 }
 
             }, 0);
@@ -53,15 +61,18 @@ function ScrollToTopOnRouteChange() {
                 if (element) {
                     const targetTop = element.getBoundingClientRect().top + window.scrollY;
                     window.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+                    refreshFadeInAfterScroll();
                     return;
                 }
 
                 window.scrollTo(0, 0);
+                refreshFadeInAfterScroll();
             }, 0);
             return;
         }
 
         window.scrollTo(0, 0);
+        refreshFadeInAfterScroll();
     }, [pathname, hash, state]);
 
     return null;
@@ -152,13 +163,17 @@ function App() {
             }
         );
 
-        const activateVisibleElements = window.requestAnimationFrame(() => {
-            syncVisibleState();
-            fadeElements.forEach((element) => observer.observe(element));
-        });
+        let animationFrameId = 0;
+        const activateVisibleElements = window.setTimeout(() => {
+            animationFrameId = window.requestAnimationFrame(() => {
+                syncVisibleState();
+                fadeElements.forEach((element) => observer.observe(element));
+            });
+        }, 60);
 
         return () => {
-            window.cancelAnimationFrame(activateVisibleElements);
+            window.clearTimeout(activateVisibleElements);
+            window.cancelAnimationFrame(animationFrameId);
             observer.disconnect();
         };
     }, [isPreloaderVisible, pathname, hash, isMobileAboutMe, fadeRefreshTick]);

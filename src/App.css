@@ -9,6 +9,8 @@ body,
 
 body {
   font-family: "Inter", sans-serif;
+  --mobile-page-top-spacing: calc(150px + env(safe-area-inset-top, 0px));
+  --mobile-section-gap: 72px;
 }
 
 button,
@@ -85,7 +87,14 @@ select {
 }
 
 @media screen and (max-width: 640px) {
+  .fade-in {
+    transform: scale(1) translateY(20px);
+  }
+  .fade-in.active {
+    transform: scale(1) translateY(0);
+  }
   .home-hoeikhelp-cta {
+    margin: 0 0 var(--mobile-section-gap) 0;
     padding: 0 5%;
   }
   .home-hoeikhelp-link {

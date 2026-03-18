@@ -108,6 +108,13 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .helpgebieden {
+    padding: var(--mobile-page-top-spacing) 0 72px;
+  }
+  .helpgebieden .items-wrapper {
+    margin-top: 48px;
+    gap: 24px;
+  }
   .helpgebieden .section-wrapper .section-title {
     font-size: clamp(1.6rem, 5.5vw, 2.2rem);
     text-align: left;

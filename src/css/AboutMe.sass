@@ -175,7 +175,10 @@ $seperation: 10px
 .about-me.about-me-preview
   min-height: auto
   padding-top: 80px
-  padding-bottom: 40px
+  padding-bottom: var(--mobile-section-gap)
+
+  @media screen and (max-width: 640px)
+    padding-top: 64px
 
 .about-me .about-me-read-more
   width: 200px
