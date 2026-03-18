@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Authentisiteit</title>
+  <script>
+    (function redirectToApp() {
+      var pathSegmentsToKeep = 0;
+      var location = window.location;
+      var pathname = location.pathname
+        .split("/")
+        .slice(1 + pathSegmentsToKeep)
+        .join("/");
+
+      var redirectTarget =
+        location.protocol +
+        "//" +
+        location.hostname +
+        (location.port ? ":" + location.port : "") +
+        "/" +
+        (pathSegmentsToKeep ? location.pathname.split("/").slice(1, 1 + pathSegmentsToKeep).join("/") + "/" : "") +
+        "?p=/" +
+        pathname
+          .replace(/&/g, "~and~")
+          .replace(/\?/g, "~and~") +
+        (location.search ? "&q=" + location.search.slice(1).replace(/&/g, "~and~") : "") +
+        location.hash;
+
+      location.replace(redirectTarget);
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>
