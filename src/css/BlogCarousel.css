@@ -135,6 +135,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 10px;
 }
 
 .blog-carousel-dot {
@@ -213,6 +214,9 @@
   .blog-carousel-controls {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .blog-carousel-dots {
+    padding-left: 0;
   }
   .blog-carousel-next {
     max-width: none;

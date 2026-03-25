@@ -79,7 +79,7 @@ function ScrollToTopOnRouteChange() {
 }
 
 function App() {
-    const { pathname, hash } = useLocation();
+    const { pathname } = useLocation();
     const [isPreloaderVisible, setIsPreloaderVisible] = useState(true);
     const [isPreloaderActive, setIsPreloaderActive] = useState(true);
     const [isMobileAboutMe, setIsMobileAboutMe] = useState(() => window.innerWidth <= 1150);
