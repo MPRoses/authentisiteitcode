@@ -22,13 +22,13 @@ select {
 
 .fade-in {
   opacity: 0;
+  transform: translateY(30px);
   transition: opacity 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89), transform 1.2s cubic-bezier(0.18, 0.7, 0.34, 0.89);
   will-change: opacity, transform;
-  transform: scale(1) translateY(50px);
 }
 .fade-in.active {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: translateY(0);
 }
 
 .scroll-reveal-section {
@@ -87,12 +87,6 @@ select {
 }
 
 @media screen and (max-width: 640px) {
-  .fade-in {
-    transform: scale(1) translateY(20px);
-  }
-  .fade-in.active {
-    transform: scale(1) translateY(0);
-  }
   .home-hoeikhelp-cta {
     margin: 0 0 var(--mobile-section-gap) 0;
     padding: 0 5%;

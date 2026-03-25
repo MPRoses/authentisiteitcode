@@ -128,10 +128,6 @@ function App() {
     useEffect(() => {
         const fadeElements = Array.from(document.querySelectorAll(".fade-in"));
 
-        fadeElements.forEach((element) => {
-            element.classList.remove("active");
-        });
-
         if (isPreloaderVisible || fadeElements.length === 0) {
             return undefined;
         }
@@ -176,7 +172,7 @@ function App() {
             window.cancelAnimationFrame(animationFrameId);
             observer.disconnect();
         };
-    }, [isPreloaderVisible, pathname, hash, isMobileAboutMe, fadeRefreshTick]);
+    }, [isPreloaderVisible, isMobileAboutMe, fadeRefreshTick]);
 
     const HomePage = () => (
         <>

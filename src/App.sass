@@ -20,12 +20,12 @@ select
 
 .fade-in
   opacity: 0
+  transform: translateY(30px)
   transition: opacity $cubic, transform $cubic
   will-change: opacity, transform
-  transform: scale(1) translateY(50px)
   &.active
     opacity: 1
-    transform: scale(1) translateY(0)
+    transform: translateY(0)
 
 .scroll-reveal-section
   width: 100%
@@ -77,12 +77,6 @@ select
   background-color: transparent
 
 @media screen and (max-width: 640px)
-  .fade-in
-    transform: scale(1) translateY(20px)
-
-    &.active
-      transform: scale(1) translateY(0)
-
   .home-hoeikhelp-cta
     margin: 0 0 var(--mobile-section-gap) 0
     padding: 0 5%
