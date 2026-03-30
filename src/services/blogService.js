@@ -20,6 +20,10 @@ function mapSupabasePost(post) {
         date: post.date_label,
         readTime: post.read_time,
         content: post.content,
+        documentUrl: post.document_url ?? '',
+        documentName: post.document_name ?? '',
+        documentSizeBytes: Number(post.document_size_bytes) || 0,
+        documentLabel: post.document_label ?? '',
         published: post.published,
     });
 }
@@ -40,7 +44,7 @@ export async function getPublishedPosts() {
 
     const { data, error } = await supabase
         .from('posts')
-        .select('id, slug, title, excerpt, content, image_url, date_label, read_time, published, sort_order, updated_at')
+        .select('*')
         .eq('published', true)
         .order('sort_order', { ascending: true, nullsFirst: false })
         .order('updated_at', { ascending: false });
@@ -60,7 +64,7 @@ export async function getPublishedPostBySlug(slug) {
 
     const { data, error } = await supabase
         .from('posts')
-        .select('id, slug, title, excerpt, content, image_url, date_label, read_time, published')
+        .select('*')
         .eq('slug', slug)
         .eq('published', true)
         .maybeSingle();

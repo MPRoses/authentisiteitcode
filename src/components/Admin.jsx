@@ -10,6 +10,7 @@ import {
     signInAdmin,
     signOutAdmin,
     subscribeToAdminAuth,
+    uploadPostDocument,
     uploadPostImage,
 } from '../services/adminBlogService';
 
@@ -32,6 +33,10 @@ function createEmptyPost() {
         imageUrl: '',
         dateLabel: '',
         readTime: '',
+        documentUrl: '',
+        documentName: '',
+        documentSizeBytes: 0,
+        documentLabel: '',
         sortOrder: 0,
         published: false,
     };
@@ -47,6 +52,10 @@ function mapPostToForm(post) {
         imageUrl: post.imageUrl,
         dateLabel: post.dateLabel,
         readTime: post.readTime,
+        documentUrl: post.documentUrl ?? '',
+        documentName: post.documentName ?? '',
+        documentSizeBytes: Number(post.documentSizeBytes) || 0,
+        documentLabel: post.documentLabel ?? '',
         sortOrder: post.sortOrder ?? 0,
         published: Boolean(post.published),
     };
@@ -65,11 +74,15 @@ function Admin() {
     const [isSaving, setIsSaving] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [isUploadingDocument, setIsUploadingDocument] = useState(false);
     const [uploadedImageName, setUploadedImageName] = useState('');
     const [newPostImageName, setNewPostImageName] = useState('');
+    const [uploadedDocumentName, setUploadedDocumentName] = useState('');
+    const [newPostDocumentName, setNewPostDocumentName] = useState('');
     const selectedPostIdRef = useRef(selectedPostId);
     const newPostDraftRef = useRef(newPostDraft);
     const newPostImageNameRef = useRef(newPostImageName);
+    const newPostDocumentNameRef = useRef(newPostDocumentName);
 
     useEffect(() => {
         selectedPostIdRef.current = selectedPostId;
@@ -82,6 +95,10 @@ function Admin() {
     useEffect(() => {
         newPostImageNameRef.current = newPostImageName;
     }, [newPostImageName]);
+
+    useEffect(() => {
+        newPostDocumentNameRef.current = newPostDocumentName;
+    }, [newPostDocumentName]);
 
     useEffect(() => {
         if (!isSupabaseConfigured) {
@@ -123,6 +140,8 @@ function Admin() {
             setNewPostDraft(createEmptyPost());
             setUploadedImageName('');
             setNewPostImageName('');
+            setUploadedDocumentName('');
+            setNewPostDocumentName('');
             return;
         }
 
@@ -144,6 +163,7 @@ function Admin() {
                     setSelectedPostId('new');
                     setFormState(newPostDraftRef.current);
                     setUploadedImageName(newPostImageNameRef.current);
+                    setUploadedDocumentName(newPostDocumentNameRef.current);
                     return;
                 }
 
@@ -151,6 +171,7 @@ function Admin() {
                 setSelectedPostId(matchingPost.id);
                 setFormState(mapPostToForm(matchingPost));
                 setUploadedImageName('');
+                setUploadedDocumentName(matchingPost.documentName ?? '');
             })
             .catch((error) => {
                 console.error('Failed to load admin posts:', error);
@@ -186,6 +207,7 @@ function Admin() {
             setSelectedPostId('new');
             setFormState(newPostDraft);
             setUploadedImageName(newPostImageName);
+            setUploadedDocumentName(newPostDocumentName);
             setSaveMessage('');
             return;
         }
@@ -199,11 +221,13 @@ function Admin() {
         if (selectedPostIdRef.current === 'new') {
             setNewPostDraft(formState);
             setNewPostImageName(uploadedImageName);
+            setNewPostDocumentName(uploadedDocumentName);
         }
 
         setSelectedPostId(postId);
         setFormState(mapPostToForm(nextPost));
         setUploadedImageName('');
+        setUploadedDocumentName(nextPost.documentName ?? '');
         setSaveMessage('');
     };
 
@@ -236,6 +260,10 @@ function Admin() {
                 imageUrl: formState.imageUrl.trim(),
                 dateLabel: formState.dateLabel.trim(),
                 readTime: formState.readTime.trim(),
+                documentUrl: formState.documentUrl.trim(),
+                documentName: formState.documentName.trim(),
+                documentSizeBytes: Number(formState.documentSizeBytes) || 0,
+                documentLabel: formState.documentLabel.trim(),
                 sortOrder: Number(formState.sortOrder) || 0,
                 published: formState.published,
             });
@@ -246,7 +274,9 @@ function Admin() {
             setFormState(mapPostToForm(savedPost));
             setNewPostDraft(createEmptyPost());
             setNewPostImageName('');
+            setNewPostDocumentName('');
             setUploadedImageName('');
+            setUploadedDocumentName('');
             setSaveMessage('Opgeslagen.');
         } catch (error) {
             setSaveMessage(error.message || 'Opslaan is mislukt.');
@@ -284,6 +314,43 @@ function Admin() {
         }
     };
 
+    const handleDocumentUpload = async (event) => {
+        const file = event.target.files?.[0];
+
+        if (!file) {
+            return;
+        }
+
+        if (file.type !== 'application/pdf') {
+            setSaveMessage('Alleen PDF-bestanden zijn toegestaan.');
+            event.target.value = '';
+            return;
+        }
+
+        setIsUploadingDocument(true);
+        setSaveMessage('');
+
+        try {
+            const publicUrl = await uploadPostDocument(file, formState.slug || formState.title);
+            updateFormState((currentValue) => ({
+                ...currentValue,
+                documentUrl: publicUrl,
+                documentName: file.name,
+                documentSizeBytes: file.size,
+            }));
+            setUploadedDocumentName(file.name);
+            if (selectedPostIdRef.current === 'new') {
+                setNewPostDocumentName(file.name);
+            }
+            setSaveMessage('PDF geupload. Vergeet niet op te slaan.');
+        } catch (error) {
+            setSaveMessage(error.message || 'Uploaden van PDF is mislukt.');
+        } finally {
+            setIsUploadingDocument(false);
+            event.target.value = '';
+        }
+    };
+
     const handleDelete = async () => {
         if (!selectedPost) {
             return;
@@ -304,6 +371,7 @@ function Admin() {
 
             setPosts(nextPosts);
             setUploadedImageName('');
+            setUploadedDocumentName('');
 
             if (nextPosts.length === 0) {
                 setSelectedPostId('new');
@@ -500,6 +568,47 @@ function Admin() {
                                 </label>
 
                                 <label className="admin-field admin-field-full">
+                                    <span>Upload PDF (optioneel)</span>
+                                    <input type="file" accept="application/pdf" onChange={handleDocumentUpload} />
+                                    {uploadedDocumentName && <small>Geuploade PDF: {uploadedDocumentName}</small>}
+                                    {formState.documentUrl && (
+                                        <button
+                                            className="admin-inline-link"
+                                            type="button"
+                                            onClick={() => {
+                                                updateFormState((currentValue) => ({
+                                                    ...currentValue,
+                                                    documentUrl: '',
+                                                    documentName: '',
+                                                    documentSizeBytes: 0,
+                                                }));
+                                                setUploadedDocumentName('');
+                                                if (selectedPostIdRef.current === 'new') {
+                                                    setNewPostDocumentName('');
+                                                }
+                                                setSaveMessage('PDF verwijderd. Vergeet niet op te slaan.');
+                                            }}
+                                        >
+                                            PDF verwijderen
+                                        </button>
+                                    )}
+                                </label>
+
+                                <label className="admin-field admin-field-full">
+                                    <span>PDF titel (optioneel)</span>
+                                    <input
+                                        type="text"
+                                        value={formState.documentLabel}
+                                        onChange={(event) => updateFormState((currentValue) => ({
+                                            ...currentValue,
+                                            documentLabel: event.target.value,
+                                        }))}
+                                        placeholder="Handreiking als PDF"
+                                    />
+                                    <small>Deze titel wordt links boven de downloadknop getoond.</small>
+                                </label>
+
+                                <label className="admin-field admin-field-full">
                                     <span>Inhoud</span>
                                     <textarea
                                         rows="18"
@@ -542,6 +651,7 @@ function Admin() {
                                 </button>
 
                                 {isUploading && <span className="admin-uploading">Afbeelding uploaden...</span>}
+                                {isUploadingDocument && <span className="admin-uploading">PDF uploaden...</span>}
                                 {selectedPost && <span className="admin-selected-slug">Actieve URL: {selectedPost.slug}</span>}
                             </div>
                         </form>
