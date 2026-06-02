@@ -9,6 +9,10 @@ create table if not exists public.posts (
     image_url text not null default '',
     date_label text not null default '',
     read_time text not null default '',
+    document_url text not null default '',
+    document_name text not null default '',
+    document_size_bytes bigint not null default 0,
+    document_label text not null default '',
     sort_order integer,
     published boolean not null default false,
     created_at timestamptz not null default timezone('utc', now()),
@@ -31,6 +35,12 @@ create trigger posts_set_updated_at
 before update on public.posts
 for each row
 execute function public.set_updated_at();
+
+alter table public.posts
+    add column if not exists document_url text not null default '',
+    add column if not exists document_name text not null default '',
+    add column if not exists document_size_bytes bigint not null default 0,
+    add column if not exists document_label text not null default '';
 
 alter table public.posts enable row level security;
 

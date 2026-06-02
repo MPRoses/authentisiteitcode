@@ -143,14 +143,18 @@ function App() {
 
         const syncVisibleState = () => {
             fadeElements.forEach((element) => {
-                element.classList.toggle("active", isElementInView(element));
+                if (isElementInView(element)) {
+                    element.classList.add("active");
+                }
             });
         };
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    entry.target.classList.toggle("active", entry.isIntersecting);
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
                 });
             },
             {
